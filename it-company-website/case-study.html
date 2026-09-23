@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed case study of the SmartCampus education management portal developed using React, PHP, and MySQL as a demonstration project by TechNova Solutions.">
+  <title>SmartCampus Case Study | TechNova Solutions (Demo)</title>
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SmartCampus Case Study | TechNova Solutions (Demo)">
+  <meta property="og:description" content="Detailed case study of the SmartCampus education management portal developed using React, PHP, and MySQL as a demonstration project by TechNova Solutions.">
+  <meta property="og:url" content="./case-study.html">
+  <link rel="canonical" href="./case-study.html">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Corporate Header / Navbar (PDR Section 4 & 35) -->
+  <header class="site-header" id="top">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+        <span class="brand-icon" aria-hidden="true">T</span>
+        <span class="brand-name">
+          <span class="brand-title">TechNova</span>
+          <span class="brand-subtitle">Solutions</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="careers.html" class="nav-link">Careers</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="start-project.html" class="btn btn-primary header-cta-desktop">Start a Project</a>
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open main menu">
+          <span class="hamburger-icon" aria-hidden="true">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" hidden>
+    <div class="mobile-drawer-overlay"></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+          <span class="brand-icon" aria-hidden="true">T</span>
+          <span class="brand-name">
+            <span class="brand-title">TechNova</span>
+            <span class="brand-subtitle">Solutions</span>
+          </span>
+        </a>
+        <button type="button" class="mobile-drawer-close" aria-label="Close navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav aria-label="Mobile Menu Links">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+          <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link active" aria-current="page">Portfolio</a></li>
+          <li><a href="products.html" class="mobile-nav-link">Products</a></li>
+          <li><a href="technologies.html" class="mobile-nav-link">Technologies</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="careers.html" class="mobile-nav-link">Careers</a></li>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="start-project.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: var(--spacing-2);">Start a Project</a>
+        <a href="portfolio.html" class="btn btn-secondary" style="width: 100%; text-align: center;">View Our Work</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- 1. Hero & Overview Section (PDR Section 14 - Section 1: Overview) -->
+    <section class="case-study-hero" aria-labelledby="case-study-heading">
+      <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--spacing-4);">
+          <ol style="display: flex; gap: var(--spacing-2); list-style: none; padding: 0; margin: 0; font-size: var(--font-size-xs); color: var(--color-text-subtle);">
+            <li><a href="index.html" style="color: var(--color-accent); text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="portfolio.html" style="color: var(--color-accent); text-decoration: none;">Portfolio</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" style="color: var(--color-text-muted);">SmartCampus</li>
+          </ol>
+        </nav>
+
+        <div style="display: flex; align-items: center; gap: var(--spacing-3); flex-wrap: wrap;">
+          <span class="portfolio-industry-pill">Education</span>
+          <span class="demo-concept-badge">Demo Case Study Concept</span>
+        </div>
+
+        <h1 id="case-study-heading" style="margin-top: var(--spacing-3); margin-bottom: var(--spacing-3);">
+          SmartCampus: Integrated Academic Management Portal
+        </h1>
+
+        <p class="lead" style="max-width: 800px; margin-bottom: var(--spacing-4);">
+          A centralized web application engineered to consolidate student records, course scheduling, faculty administration, and academic evaluations into a unified digital workspace.
+        </p>
+
+        <!-- Project Meta Grid -->
+        <div class="case-study-meta-grid">
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Industry</div>
+            <div class="case-meta-item-value">Education</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Core Technologies</div>
+            <div class="case-meta-item-value">React, PHP, MySQL</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Project Type</div>
+            <div class="case-meta-item-value">Web Application Architecture</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Delivery Scope</div>
+            <div class="case-meta-item-value">Full-Stack Development</div>
+          </div>
+        </div>
+
+        <!-- Demo Notice Banner -->
+        <div class="demo-disclaimer" style="margin-top: var(--spacing-4); width: 100%;">
+          <strong>Demo Notice:</strong> SmartCampus is a fictional/demonstration project model developed to illustrate TechNova's engineering approach for educational institutions. No real client data, live institutional operations, or commercial metrics are represented.
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Overview Content Block -->
+    <section class="section case-study-block" aria-labelledby="overview-heading">
+      <div class="container">
+        <h2 id="overview-heading" style="margin-bottom: var(--spacing-4);">1. Project Overview</h2>
+        <p style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); max-width: 860px;">
+          SmartCampus was designed to modernize administrative and academic workflows for educational organizations. Educational campuses frequently struggle with fragmented data silos across student enrollments, faculty schedules, and grade reporting. This project concept unifies these disparate operational touchpoints into a single, responsive portal with dedicated role-based views for administrators, faculty members, and students.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Client Challenge (PDR Section 14 - Section 2) -->
+    <section class="section case-study-block" aria-labelledby="challenge-heading" style="background-color: var(--color-bg-alt);">
+      <div class="container">
+        <h2 id="challenge-heading" style="margin-bottom: var(--spacing-4);">2. Client Challenge</h2>
+        <div class="grid grid-2" style="gap: var(--spacing-6);">
+          <div style="background-color: var(--color-surface); padding: var(--spacing-6); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">Operational Bottlenecks</h3>
+            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed);">
+              <li>Isolated legacy databases caused redundant manual data entry between admission desks and department heads.</li>
+              <li>Faculty members lacked a standardized, real-time portal to input attendance and publish mid-term assessments.</li>
+              <li>Students experienced delayed access to lecture timetables and semester evaluation statements.</li>
+            </ul>
+          </div>
+          <div style="background-color: var(--color-surface); padding: var(--spacing-6); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">Technical Constraints</h3>
+            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed);">
+              <li>Requirement for responsive multi-device access across desktops, tablets, and smartphones.</li>
+              <li>Strict role-based permission boundaries between administrative staff, teaching personnel, and enrolled learners.</li>
+              <li>Need for a robust relational data schema capable of linking courses, prerequisites, faculty assignments, and transcripts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Proposed Solution (PDR Section 14 - Section 3) -->
+    <section class="section case-study-block" aria-labelledby="solution-heading">
+      <div class="container">
+        <h2 id="solution-heading" style="margin-bottom: var(--spacing-4);">3. Proposed Solution</h2>
+        <p style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); max-width: 860px; margin-bottom: var(--spacing-6);">
+          TechNova conceptualized a modular three-tier web application architecture. By combining a reactive single-page front-end interface with an API-driven backend and structured relational persistence, the platform delivers smooth navigation, secure role-based permissions, and real-time record coordination.
+        </p>
+        <div class="grid grid-3" style="gap: var(--spacing-6);">
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Modular Frontend</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Engineered with React to provide interactive schedule planners, instant grade table updates, and responsive navigation for mobile and desktop screens.
+            </p>
+          </div>
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Structured Backend API</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Constructed with PHP handling endpoint routing, input validation, role-based authorization filters, and transactional administrative operations.
+            </p>
+          </div>
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Relational Persistence</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Normalized MySQL relational schema providing data integrity for student enrollments, course catalogs, academic terms, and grade point calculations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Development Process (PDR Section 14 - Section 4 & Section 10 Sequence) -->
+    <section class="section case-study-block" aria-labelledby="process-heading" style="background-color: var(--color-bg-alt);">
+      <div class="container">
+        <h2 id="process-heading" style="margin-bottom: var(--spacing-2);">4. Development Process</h2>
+        <p class="lead" style="margin-bottom: var(--spacing-6); max-width: 760px;">
+          The project followed TechNova's standard 7-stage engineering lifecycle to move from initial institutional scoping to release.
+        </p>
+
+        <div class="process-stepper">
+          <!-- Step 1: Discovery -->
+          <div class="process-step-card">
+            <div class="process-step-num">1</div>
+            <h3 class="process-step-name">Discovery</h3>
+            <p class="process-step-desc">Captured institutional workflows, academic calendaring requirements, and stakeholder use-cases across faculty and students.</p>
+          </div>
+          <!-- Step 2: Planning -->
+          <div class="process-step-card">
+            <div class="process-step-num">2</div>
+            <h3 class="process-step-name">Planning</h3>
+            <p class="process-step-desc">Designed entity relationship models, REST endpoint contracts, and role-based authorization hierarchies.</p>
+          </div>
+          <!-- Step 3: UI/UX -->
+          <div class="process-step-card">
+            <div class="process-step-num">3</div>
+            <h3 class="process-step-name">UI/UX</h3>
+            <p class="process-step-desc">Built interactive wireframes and accessible interface components for scheduling calendars and gradebook tables.</p>
+          </div>
+          <!-- Step 4: Development -->
+          <div class="process-step-card">
+            <div class="process-step-num">4</div>
+            <h3 class="process-step-name">Development</h3>
+            <p class="process-step-desc">Implemented front-end React components, PHP service layer APIs, and database migrations in staged sprints.</p>
+          </div>
+          <!-- Step 5: Testing -->
+          <div class="process-step-card">
+            <div class="process-step-num">5</div>
+            <h3 class="process-step-name">Testing</h3>
+            <p class="process-step-desc">Conducted functional test suites, cross-browser validation, role authorization audits, and load checks.</p>
+          </div>
+          <!-- Step 6: Deployment -->
+          <div class="process-step-card">
+            <div class="process-step-num">6</div>
+            <h3 class="process-step-name">Deployment</h3>
+            <p class="process-step-desc">Configured server environment, database replication parameters, and initial administrative provisioning.</p>
+          </div>
+          <!-- Step 7: Support -->
+          <div class="process-step-card">
+            <div class="process-step-num">7</div>
+            <h3 class="process-step-name">Support</h3>
+            <p class="process-step-desc">Delivered administrative system documentation, post-release monitoring, and feature iteration roadmaps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Features (PDR Section 14 - Section 5) -->
+    <section class="section case-study-block" aria-labelledby="features-heading">
+      <div class="container">
+        <h2 id="features-heading" style="margin-bottom: var(--spacing-4);">5. Application Features</h2>
+        <div class="grid grid-3" style="gap: var(--spacing-6);">
+          
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Student Records Management</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Centralized profiles detailing contact info, enrolled program, semester history, and administrative fee statuses.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Course &amp; Timetable Scheduling</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Interactive visual timetable engine preventing room and faculty scheduling conflicts across academic departments.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Faculty Gradebook</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Structured grading sheets with weighted assessments, assignment scoring, and automated GPA calculations.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Attendance Tracking</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Daily lecture attendance register with percentage threshold warnings and automated administrative reports.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Role-Based Portals</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Discrete access controls for Institution Admins, Department Deans, Teaching Faculty, and Enrolled Students.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Notice &amp; Alert Dispatch</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Campus-wide announcement broadcasting for exam timetables, term deadlines, and administrative notices.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Technologies (PDR Section 14 - Section 6) -->
+    <section class="section case-study-block" aria-labelledby="technologies-heading" style="background-color: var(--color-bg-alt);">
+      <div class="container">
+        <h2 id="technologies-heading" style="margin-bottom: var(--spacing-4);">6. Technologies Used</h2>
+        <div class="grid grid-3" style="gap: var(--spacing-6);">
+          
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <span class="portfolio-industry-pill" style="margin-bottom: var(--spacing-2); display: inline-block;">Frontend</span>
+            <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">React</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Modular component-based UI framework used to build interactive single-page dashboards, reactive forms, and scheduling calendars.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <span class="portfolio-industry-pill" style="margin-bottom: var(--spacing-2); display: inline-block;">Backend</span>
+            <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">PHP</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Server-side execution environment handling business logic, user session management, access verification, and API routing.
+            </p>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
+            <span class="portfolio-industry-pill" style="margin-bottom: var(--spacing-2); display: inline-block;">Database</span>
+            <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">MySQL</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
+              Relational database management system providing foreign key constraints, ACID transaction compliance, and structured queries.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Screenshots / Interface Mockups (PDR Section 14 - Section 7) -->
+    <section class="section case-study-block" aria-labelledby="screenshots-heading">
+      <div class="container">
+        <h2 id="screenshots-heading" style="margin-bottom: var(--spacing-2);">7. Application Interface Mockups</h2>
+        <p class="lead" style="margin-bottom: var(--spacing-6); max-width: 760px;">
+          Key interface views created during the UI/UX design phase illustrating portal layouts for administrators, faculty, and students.
+        </p>
+
+        <!-- Screenshot 1: Admin Dashboard -->
+        <div style="margin-bottom: var(--spacing-8);">
+          <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 1: Administrative Control Console</h3>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-3);">
+            Overview console presenting campus enrollment status, department listings, and system alerts.
+          </p>
+          <div class="case-study-mockup-frame">
+            <div class="mockup-frame-bar">
+              <span class="mockup-dot mockup-dot-red"></span>
+              <span class="mockup-dot mockup-dot-yellow"></span>
+              <span class="mockup-dot mockup-dot-green"></span>
+              <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">smartcampus.demo/admin/overview</span>
+            </div>
+            <div class="mockup-frame-content">
+              <svg width="100%" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Top Nav Bar -->
+                <rect x="0" y="0" width="800" height="30" fill="#1E293B"/>
+                <rect x="20" y="8" width="100" height="14" rx="3" fill="#3B82F6"/>
+                <rect x="680" y="8" width="100" height="14" rx="3" fill="#334155"/>
+                <!-- Sidebar -->
+                <rect x="0" y="30" width="160" height="190" fill="#0F172A"/>
+                <rect x="20" y="50" width="120" height="12" rx="2" fill="#2563EB"/>
+                <rect x="20" y="75" width="100" height="10" rx="2" fill="#334155"/>
+                <rect x="20" y="98" width="110" height="10" rx="2" fill="#334155"/>
+                <rect x="20" y="121" width="90" height="10" rx="2" fill="#334155"/>
+                <rect x="20" y="144" width="105" height="10" rx="2" fill="#334155"/>
+                <!-- Metric Cards -->
+                <rect x="180" y="50" width="180" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
+                <rect x="195" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="195" y="78" width="60" height="18" rx="3" fill="#38BDF8"/>
+                <rect x="380" y="50" width="180" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
+                <rect x="395" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="395" y="78" width="60" height="18" rx="3" fill="#10B981"/>
+                <rect x="580" y="50" width="190" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
+                <rect x="595" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="595" y="78" width="60" height="18" rx="3" fill="#F59E0B"/>
+                <!-- Data Table -->
+                <rect x="180" y="125" width="590" height="80" rx="6" fill="#1E293B" stroke="#334155"/>
+                <rect x="200" y="138" width="550" height="12" rx="2" fill="#334155"/>
+                <rect x="200" y="158" width="550" height="12" rx="2" fill="#0F172A"/>
+                <rect x="200" y="178" width="550" height="12" rx="2" fill="#334155"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Screenshot 2: Course Timetable Planner -->
+        <div>
+          <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 2: Course &amp; Timetable Scheduling Grid</h3>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-3);">
+            Interactive schedule viewer illustrating lecture blocks, assigned lecture halls, and faculty timeslots.
+          </p>
+          <div class="case-study-mockup-frame">
+            <div class="mockup-frame-bar">
+              <span class="mockup-dot mockup-dot-red"></span>
+              <span class="mockup-dot mockup-dot-yellow"></span>
+              <span class="mockup-dot mockup-dot-green"></span>
+              <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">smartcampus.demo/portal/timetable</span>
+            </div>
+            <div class="mockup-frame-content">
+              <svg width="100%" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Timetable Header -->
+                <rect x="20" y="20" width="760" height="30" rx="4" fill="#1E293B"/>
+                <rect x="40" y="28" width="120" height="14" rx="2" fill="#38BDF8"/>
+                <!-- Timetable Grid Columns -->
+                <rect x="20" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                <rect x="35" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="30" y="90" width="120" height="35" rx="3" fill="#2563EB"/>
+                
+                <rect x="175" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                <rect x="190" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="185" y="130" width="120" height="35" rx="3" fill="#7C3AED"/>
+                
+                <rect x="330" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                <rect x="345" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="340" y="85" width="120" height="35" rx="3" fill="#0D9488"/>
+
+                <rect x="485" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                <rect x="500" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="495" y="105" width="120" height="35" rx="3" fill="#D97706"/>
+
+                <rect x="640" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                <rect x="655" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="650" y="90" width="120" height="35" rx="3" fill="#2563EB"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. Project Outcome (PDR Section 14 - Section 8) -->
+    <section class="section case-study-block" aria-labelledby="outcome-heading" style="background-color: var(--color-bg-alt);">
+      <div class="container">
+        <h2 id="outcome-heading" style="margin-bottom: var(--spacing-4);">8. Project Outcome</h2>
+        
+        <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-8); max-width: 860px;">
+          <div class="demo-disclaimer" style="margin-top: 0; margin-bottom: var(--spacing-4);">
+            <strong>Demo Outcome Notice:</strong> The outcomes described below represent the technical capabilities delivered by the SmartCampus software design. In accordance with PDR project guidelines for demonstration companies, no fabricated commercial metrics, percentage improvements, user counts, client testimonials, or revenue figures are reported.
+          </div>
+          
+          <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-3);">Delivered Architecture &amp; Operational Capabilities</h3>
+          <p style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); margin-bottom: var(--spacing-4);">
+            The SmartCampus implementation demonstrated how a decoupled architecture could successfully resolve administrative bottlenecks in higher education institutions:
+          </p>
+          <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-2);">
+            <li><strong>Centralized Academic Administration:</strong> Unified student registration, course prerequisites, and faculty assignments into a cohesive relational database structure.</li>
+            <li><strong>Streamlined Evaluation Workflows:</strong> Enabled instructors to record continuous assessments directly through an accessible browser interface, removing spreadsheet transfers.</li>
+            <li><strong>Accessible Multi-Device Access:</strong> Provided responsive access for students checking schedules, assignment postings, and institutional notices on mobile devices.</li>
+            <li><strong>Separation of Concerns:</strong> Maintained discrete access layers ensuring student personal data and academic records are visible only to authorized faculty and administrative accounts.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Related Projects (PDR Section 14 - Section 9) -->
+    <section class="section case-study-block" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 id="related-heading" style="margin-bottom: var(--spacing-4);">9. Related Demo Projects</h2>
+        <div class="grid grid-2" style="gap: var(--spacing-6);">
+          
+          <!-- Related 1: HealthSync Portal -->
+          <article class="portfolio-card" data-portfolio-category="healthcare">
+            <div class="portfolio-card-body">
+              <div class="portfolio-card-meta">
+                <span class="portfolio-industry-pill">Healthcare</span>
+                <span class="demo-concept-badge">Demo Concept</span>
+              </div>
+              <h3 class="portfolio-card-title">HealthSync Portal</h3>
+              <p class="portfolio-card-desc">
+                Patient appointment coordination console, clinical intake workflows, and medical communication portal.
+              </p>
+              <div class="portfolio-tech-list">
+                <span class="portfolio-tech-pill">React</span>
+                <span class="portfolio-tech-pill">Node.js</span>
+                <span class="portfolio-tech-pill">PostgreSQL</span>
+              </div>
+              <a href="portfolio.html" class="service-card-link">View in Portfolio &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Related 2: RetailPulse Engine -->
+          <article class="portfolio-card" data-portfolio-category="retail">
+            <div class="portfolio-card-body">
+              <div class="portfolio-card-meta">
+                <span class="portfolio-industry-pill">Retail</span>
+                <span class="demo-concept-badge">Demo Concept</span>
+              </div>
+              <h3 class="portfolio-card-title">RetailPulse Engine</h3>
+              <p class="portfolio-card-desc">
+                Centralized multi-store product catalogue, inventory synchronization console, and point-of-sale data management platform.
+              </p>
+              <div class="portfolio-tech-list">
+                <span class="portfolio-tech-pill">Vue.js</span>
+                <span class="portfolio-tech-pill">Python</span>
+                <span class="portfolio-tech-pill">Redis</span>
+              </div>
+              <a href="portfolio.html" class="service-card-link">View in Portfolio &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CTA (PDR Section 14 - Section 10) -->
+    <section class="section" style="background-color: var(--color-primary); color: #ffffff; text-align: center; padding: var(--spacing-16) 0;">
+      <div class="container">
+        <h2 style="color: #ffffff; margin-bottom: var(--spacing-3);">Planning a Similar Education or Enterprise Solution?</h2>
+        <p class="lead" style="color: var(--color-text-subtle); max-width: 650px; margin: 0 auto var(--spacing-6);">
+          Consult with TechNova's engineering architects to scope your portal architecture, database models, and responsive front-end requirements.
+        </p>
+        <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
+          <a href="start-project.html" class="btn btn-primary">Discuss a Similar Project</a>
+          <a href="portfolio.html" class="btn btn-secondary" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Corporate Footer (PDR Section 4, 20, 24) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Corporate Profile -->
+        <div class="footer-col">
+          <div class="footer-brand">
+            <span class="brand-icon" aria-hidden="true">T</span>
+            <span class="brand-name">
+              <span class="brand-title">TechNova</span>
+              <span class="brand-subtitle">Solutions</span>
+            </span>
+          </div>
+          <p class="footer-desc">
+            Enterprise software development, full-stack web applications, and cloud architecture solutions engineered for growing businesses.
+          </p>
+          <div class="footer-contacts">
+            <p><strong>Address:</strong> TechNova Park, Outer Ring Road, Bangalore, Karnataka, India (Demo Office)</p>
+            <p><strong>Email:</strong> <a href="mailto:contact@technovasolutions.demo">contact@technovasolutions.demo</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            <p><strong>Hours:</strong> Mon – Fri: 9:00 AM – 6:00 PM IST</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Website Development</a></li>
+            <li><a href="services.html">Web Applications</a></li>
+            <li><a href="services.html">Mobile App Development</a></li>
+            <li><a href="services.html">SaaS Development</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+            <li><a href="services.html">IT Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Solutions & Industries -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions &amp; Industries</h4>
+          <ul class="footer-links">
+            <li><a href="solutions.html">CRM Solutions</a></li>
+            <li><a href="solutions.html">ERP Solutions</a></li>
+            <li><a href="industries.html#healthcare">Healthcare</a></li>
+            <li><a href="industries.html#education">Education</a></li>
+            <li><a href="industries.html#retail">Retail</a></li>
+            <li><a href="industries.html#finance">Finance</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter Subscription -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Stay Updated</h4>
+          <p class="footer-desc">Subscribe to our technical briefing on modern web architecture and engineering practices.</p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <div class="form-group" style="margin-bottom: var(--spacing-2);">
+              <label for="newsletter-email" class="sr-only">Work Email Address</label>
+              <input type="email" id="newsletter-email" name="email" class="form-input" placeholder="Enter your work email" required>
+              <span class="form-error" id="newsletter-email-error">Please enter a valid email address.</span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+            <div class="newsletter-feedback alert alert-success" id="newsletter-success" style="display: none; margin-top: var(--spacing-2);" role="status">
+              Thank you for subscribing to our technical briefings.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom: Copyright & Mandatory Demo Disclaimer -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechNova Solutions. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          <strong>Demo Notice:</strong> TechNova Solutions is a demonstration corporate entity. All metrics, client case studies, portfolio projects, products, and employee profiles are fictional sample materials created for evaluation purposes.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/validation.js"></script>
+</body>
+</html>
