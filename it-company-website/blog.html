@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog &amp; Engineering Resources | TechNova Solutions</title>
+  <meta name="description" content="Explore technical articles, software architecture insights, and technology best practices from the engineering teams at TechNova Solutions.">
+  <link rel="canonical" href="./blog.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Corporate Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+        <span class="brand-icon" aria-hidden="true">T</span>
+        <span class="brand-name">
+          <span class="brand-title">TechNova</span>
+          <span class="brand-subtitle">Solutions</span>
+        </span>
+      </a>
+
+      <!-- Primary Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="products.html" class="nav-link">Products</a></li>
+          <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="careers.html" class="nav-link">Careers</a></li>
+          <li><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="start-project.html" class="btn btn-primary header-cta-desktop">Start a Project</a>
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open main menu">
+          <span class="hamburger-icon" aria-hidden="true">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" hidden>
+    <div class="mobile-drawer-overlay"></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+          <span class="brand-icon" aria-hidden="true">T</span>
+          <span class="brand-name">
+            <span class="brand-title">TechNova</span>
+            <span class="brand-subtitle">Solutions</span>
+          </span>
+        </a>
+        <button type="button" class="mobile-drawer-close" aria-label="Close navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav aria-label="Mobile Menu Links">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+          <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+          <li><a href="products.html" class="mobile-nav-link">Products</a></li>
+          <li><a href="technologies.html" class="mobile-nav-link">Technologies</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="careers.html" class="mobile-nav-link">Careers</a></li>
+          <li><a href="blog.html" class="mobile-nav-link active" aria-current="page">Blog</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="start-project.html" class="btn btn-primary" style="width: 100%;">Start a Project</a>
+        <a href="portfolio.html" class="btn btn-secondary" style="width: 100%;">View Our Work</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content" class="main-content">
+    <!-- Breadcrumb & Hero -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb-list" aria-label="Breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+          <span class="breadcrumb-separator" aria-hidden="true">/</span>
+          <span class="breadcrumb-item breadcrumb-current" aria-current="page">Blog</span>
+        </nav>
+        <span class="section-tag">Insights &amp; Engineering Resources</span>
+        <h1 class="page-title" style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-extrabold); color: var(--color-primary); margin-bottom: var(--spacing-4);">
+          Engineering Blog &amp; Resources
+        </h1>
+        <p class="page-lead" style="font-size: var(--font-size-lg); color: var(--color-text-muted); max-width: 760px; line-height: var(--line-height-relaxed); margin-bottom: var(--spacing-6);">
+          Architectural breakdowns, engineering methodologies, and technical perspectives curated by TechNova Solutions software architects.
+        </p>
+
+        <!-- Fictional / Demo Notice Callout -->
+        <div style="background-color: var(--color-bg-alt); border-left: 4px solid var(--color-accent); padding: var(--spacing-4) var(--spacing-5); border-radius: 0 var(--radius-md) var(--radius-md) 0; max-width: 820px;">
+          <p style="font-size: var(--font-size-xs); color: var(--color-text-subtle); margin: 0; line-height: var(--line-height-normal);">
+            <strong>Demonstration Resources Notice (PDR Section 2 &amp; 23):</strong> TechNova Solutions is a demonstration corporate entity. The articles below represent sample technical thought leadership designed to illustrate website resource architecture and client-side filtering.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Directory & Filter Section -->
+    <section class="section" aria-label="Articles directory">
+      <div class="container">
+
+        <!-- Live Search Bar -->
+        <div class="blog-search-wrap">
+          <span class="blog-search-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+          <label for="blog-search-input" class="sr-only">Search articles by title, author, or keyword</label>
+          <input type="text" id="blog-search-input" class="blog-search-input" placeholder="Search articles by title, topic, or keyword..." autocomplete="off">
+          <button type="button" id="blog-search-clear" class="blog-search-clear" aria-label="Clear search query">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </button>
+        </div>
+
+        <!-- Exact 7 PDR Categories Filter Bar (PDR Section 23) -->
+        <div class="filter-bar" role="group" aria-label="Filter articles by category">
+          <button type="button" class="filter-btn active" data-blog-filter="all" aria-pressed="true">
+            All Categories
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="web-development" aria-pressed="false">
+            Web Development
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="mobile-development" aria-pressed="false">
+            Mobile Development
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="saas" aria-pressed="false">
+            SaaS
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="ai" aria-pressed="false">
+            AI
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="cloud" aria-pressed="false">
+            Cloud
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="business-technology" aria-pressed="false">
+            Business Technology
+          </button>
+          <button type="button" class="filter-btn" data-blog-filter="ui-ux" aria-pressed="false">
+            UI/UX
+          </button>
+        </div>
+
+        <!-- Results Counter Bar -->
+        <div class="blog-results-bar">
+          <span id="blog-results-count" aria-live="polite">Showing 7 articles</span>
+          <span>Sample Technical Insights</span>
+        </div>
+
+        <!-- Empty State Container -->
+        <div id="blog-empty-state" class="blog-empty-state" role="status">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto var(--spacing-3); color: var(--color-text-subtle);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <h3 style="font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: var(--spacing-1);">
+            No matching articles found
+          </h3>
+          <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+            Try adjusting your search keywords or switching category filters.
+          </p>
+        </div>
+
+        <!-- Blog Articles Grid: Exact PDR Structure -->
+        <div class="blog-grid" id="blog-articles-grid">
+
+          <!-- Article 1: Web Development -->
+          <article class="blog-card" data-blog-category="web-development">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">Web Development</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <circle cx="200" cy="100" r="60" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <rect x="150" y="70" width="100" height="60" rx="4" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+                <path d="M165 95 L180 85 L180 105 Z" fill="#38bdf8"/>
+                <path d="M235 95 L220 85 L220 105 Z" fill="#38bdf8"/>
+                <line x1="192" y1="110" x2="208" y2="80" stroke="#94a3b8" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova Frontend Squad</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-10-14">Oct 14, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>6 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Architecting Scalable Frontends with Vanilla ES6+ and Modern CSS</a>
+              </h2>
+              <p class="blog-card-desc">
+                How component-driven Vanilla JavaScript and CSS Custom Properties deliver superior initial page load metrics, accessibility, and architectural longevity.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Architecting Scalable Frontends with Vanilla ES6+ and Modern CSS">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 2: Mobile Development -->
+          <article class="blog-card" data-blog-category="mobile-development">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">Mobile Development</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <rect x="160" y="40" width="80" height="120" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <line x1="185" y1="52" x2="215" y2="52" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="200" cy="145" r="4" fill="#64748b"/>
+                <rect x="172" y="65" width="56" height="65" rx="3" fill="#0f172a"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova Mobile Squad</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-10-10">Oct 10, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>5 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Cross-Platform Mobile Engineering: Architecture Patterns &amp; Tradeoffs</a>
+              </h2>
+              <p class="blog-card-desc">
+                A practical evaluation of cross-platform mobile frameworks versus native development for enterprise field service and customer engagement.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Cross-Platform Mobile Engineering: Architecture Patterns & Tradeoffs">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 3: SaaS -->
+          <article class="blog-card" data-blog-category="saas">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">SaaS</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <rect x="140" y="55" width="120" height="90" rx="6" fill="#1e293b" stroke="#2563eb" stroke-width="2"/>
+                <rect x="155" y="70" width="30" height="20" rx="3" fill="#38bdf8"/>
+                <rect x="195" y="70" width="50" height="8" rx="2" fill="#64748b"/>
+                <rect x="195" y="82" width="35" height="8" rx="2" fill="#475569"/>
+                <line x1="140" y1="105" x2="260" y2="105" stroke="#334155" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova Cloud Practice</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-10-05">Oct 05, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>7 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Multi-Tenant SaaS Data Isolation: Engineering Reliable B2B Platforms</a>
+              </h2>
+              <p class="blog-card-desc">
+                Examining database separation, tenant isolation patterns, and API governance models for enterprise software-as-a-service architectures.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Multi-Tenant SaaS Data Isolation">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 4: AI -->
+          <article class="blog-card" data-blog-category="ai">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">AI</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <circle cx="200" cy="100" r="35" stroke="#38bdf8" stroke-width="2"/>
+                <circle cx="150" cy="80" r="15" fill="#1e293b" stroke="#2563eb" stroke-width="1.5"/>
+                <circle cx="250" cy="80" r="15" fill="#1e293b" stroke="#2563eb" stroke-width="1.5"/>
+                <circle cx="170" cy="140" r="12" fill="#1e293b" stroke="#2563eb" stroke-width="1.5"/>
+                <circle cx="230" cy="140" r="12" fill="#1e293b" stroke="#2563eb" stroke-width="1.5"/>
+                <line x1="165" y1="85" x2="185" y2="95" stroke="#38bdf8" stroke-width="1.5"/>
+                <line x1="235" y1="85" x2="215" y2="95" stroke="#38bdf8" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova Applied AI Lab</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-09-28">Sep 28, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>5 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Practical AI Integration: Enhancing Enterprise Workflows with Machine Learning</a>
+              </h2>
+              <p class="blog-card-desc">
+                Strategic approaches to integrating predictive models and natural language interfaces into existing business software without operational disruption.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Practical AI Integration">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 5: Cloud -->
+          <article class="blog-card" data-blog-category="cloud">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">Cloud</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <path d="M160 120 C 145 120, 135 110, 135 95 C 135 82, 145 72, 158 72 C 162 60, 175 50, 192 50 C 212 50, 226 63, 228 78 C 238 78, 248 86, 248 98 C 248 110, 238 120, 225 120 Z" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <line x1="170" y1="140" x2="220" y2="140" stroke="#2563eb" stroke-width="2"/>
+                <line x1="195" y1="125" x2="195" y2="140" stroke="#2563eb" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova DevOps Squad</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-09-20">Sep 20, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>6 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Cloud Infrastructure Automation: Resilient Infrastructure as Code</a>
+              </h2>
+              <p class="blog-card-desc">
+                Best practices for automated cloud provisioning, configuration management, and zero-downtime deployment pipelines across multi-region environments.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Cloud Infrastructure Automation">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 6: Business Technology -->
+          <article class="blog-card" data-blog-category="business-technology">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">Business Technology</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <rect x="140" y="60" width="120" height="80" rx="4" fill="#1e293b" stroke="#2563eb" stroke-width="1.5"/>
+                <line x1="160" y1="120" x2="160" y2="90" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+                <line x1="185" y1="120" x2="185" y2="75" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+                <line x1="210" y1="120" x2="210" y2="100" stroke="#38bdf8" stroke-width="6" stroke-linecap="round"/>
+                <line x1="235" y1="120" x2="235" y2="70" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova Solutions Architecture</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-09-15">Sep 15, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>8 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Modernizing Legacy ERP Systems: Phased Migration Strategies</a>
+              </h2>
+              <p class="blog-card-desc">
+                How established enterprises decouple monolithic ERP backends into modular services while maintaining business continuity and transactional data integrity.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Modernizing Legacy ERP Systems">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article 7: UI/UX -->
+          <article class="blog-card" data-blog-category="ui-ux">
+            <div class="blog-cover-frame">
+              <span class="blog-category-badge">UI/UX</span>
+              <svg class="blog-cover-svg" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="400" height="200" fill="#0f172a"/>
+                <rect x="140" y="50" width="120" height="90" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <circle cx="165" cy="75" r="10" fill="#38bdf8"/>
+                <rect x="185" y="70" width="55" height="10" rx="3" fill="#64748b"/>
+                <rect x="155" y="100" width="85" height="25" rx="4" fill="#0f172a" stroke="#2563eb" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta-row">
+                <span class="blog-meta-author">TechNova Design Squad</span>
+                <span class="blog-meta-dot">&bull;</span>
+                <time datetime="2026-09-08">Sep 08, 2026</time>
+                <span class="blog-meta-dot">&bull;</span>
+                <span>4 min read</span>
+              </div>
+              <h2 class="blog-card-title">
+                <a href="blog-details.html">Design Systems for Complex Business Software: Usability &amp; Consistency</a>
+              </h2>
+              <p class="blog-card-desc">
+                Creating unified design token hierarchies, accessible data tables, and high-density interface components for mission-critical enterprise applications.
+              </p>
+              <div class="blog-card-footer">
+                <a href="blog-details.html" class="blog-read-link" aria-label="Read article: Design Systems for Complex Business Software">
+                  Read Article &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Corporate Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Company Profile -->
+        <div class="footer-column footer-brand-column">
+          <div class="footer-logo">
+            <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+              <span class="brand-icon" aria-hidden="true">T</span>
+              <span class="brand-name">
+                <span class="brand-title">TechNova</span>
+                <span class="brand-subtitle">Solutions</span>
+              </span>
+            </a>
+          </div>
+          <p class="footer-bio">
+            We design and develop websites, applications and software solutions that help businesses operate, scale and connect with their customers.
+          </p>
+          <div class="footer-contact-details">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>TechNova Tech Park, Sector 5, Bangalore, Karnataka, India (Demo)</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:contact@technovasolutions.demo" class="footer-link">contact@technovasolutions.demo</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <a href="tel:+919876543210" class="footer-link">+91 98765 43210 (Demo)</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>Mon – Fri: 9:00 AM – 6:00 PM IST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="team.html" class="footer-link">Our Team</a></li>
+            <li><a href="careers.html" class="footer-link">Careers</a></li>
+            <li><a href="faq.html" class="footer-link">FAQ</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Core IT Services (PDR Section 2) -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html" class="footer-link">Website Development</a></li>
+            <li><a href="services.html" class="footer-link">Web Application Development</a></li>
+            <li><a href="services.html" class="footer-link">Mobile App Development</a></li>
+            <li><a href="services.html" class="footer-link">SaaS Development</a></li>
+            <li><a href="services.html" class="footer-link">Cloud Solutions</a></li>
+            <li><a href="services.html" class="footer-link">IT Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Solutions & Industries (PDR Section 11 & 12) -->
+        <div class="footer-column">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-links-list">
+            <li><a href="solutions.html" class="footer-link">CRM Solutions</a></li>
+            <li><a href="solutions.html" class="footer-link">ERP Solutions</a></li>
+            <li><a href="solutions.html" class="footer-link">Automation Solutions</a></li>
+            <li><a href="industries.html" class="footer-link">Healthcare</a></li>
+            <li><a href="industries.html" class="footer-link">Education</a></li>
+            <li><a href="industries.html" class="footer-link">Finance &amp; Banking</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Newsletter Subscription (PDR Section 24) -->
+        <div class="footer-column">
+          <div class="newsletter-card">
+            <h4 class="footer-heading" style="margin-bottom: var(--spacing-2);">Stay Connected</h4>
+            <p>Receive tech insights, engineering articles, and corporate updates.</p>
+            <form class="newsletter-form-group" data-newsletter novalidate>
+              <div class="newsletter-input-wrap">
+                <label for="footer-email" class="sr-only">Business email address</label>
+                <input type="email" id="footer-email" class="newsletter-input" placeholder="name@company.com" required>
+                <button type="submit" class="btn btn-primary newsletter-btn">Subscribe</button>
+              </div>
+              <div class="newsletter-status" role="alert" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 TechNova Solutions. All rights reserved.
+        </p>
+        <p class="footer-disclaimer">
+          <strong>Demo Notice:</strong> TechNova Solutions is a demonstration corporate entity. All company statistics, projects, client references, and team profiles displayed across this website are simulated demo content for presentation purposes (PDR Section 2).
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/validation.js"></script>
+</body>
+</html>

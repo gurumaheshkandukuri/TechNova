@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDynamicCounters();
   initSmoothScroll();
   initTechFiltering();
+  initBlogFilterAndSearch();
 });
 
 /**
@@ -201,4 +202,99 @@ function initTechFiltering() {
       });
     });
   });
+}
+
+/**
+ * Blog Category Filtering & Live Search (PDR Section 23, 25)
+ */
+function initBlogFilterAndSearch() {
+  const filterButtons = document.querySelectorAll("[data-blog-filter]");
+  const searchInput = document.querySelector("#blog-search-input");
+  const searchClear = document.querySelector("#blog-search-clear");
+  const blogCards = document.querySelectorAll("[data-blog-category]");
+  const resultsCounter = document.querySelector("#blog-results-count");
+  const emptyState = document.querySelector("#blog-empty-state");
+
+  if (blogCards.length === 0) return;
+
+  let activeCategory = "all";
+  let searchQuery = "";
+
+  function applyFilters() {
+    let visibleCount = 0;
+
+    blogCards.forEach((card) => {
+      const cardCategory = (card.getAttribute("data-blog-category") || "").toLowerCase();
+      const cardTitle = (card.querySelector(".blog-card-title")?.textContent || "").toLowerCase();
+      const cardDesc = (card.querySelector(".blog-card-desc")?.textContent || "").toLowerCase();
+      const cardAuthor = (card.querySelector(".blog-meta-author")?.textContent || "").toLowerCase();
+
+      const matchesCat = activeCategory === "all" || cardCategory === activeCategory.toLowerCase();
+      const matchesSearch = !searchQuery || 
+                            cardTitle.includes(searchQuery) || 
+                            cardDesc.includes(searchQuery) || 
+                            cardAuthor.includes(searchQuery);
+
+      if (matchesCat && matchesSearch) {
+        card.style.display = "";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    if (resultsCounter) {
+      resultsCounter.textContent = `Showing ${visibleCount} article${visibleCount === 1 ? "" : "s"}`;
+    }
+
+    if (emptyState) {
+      if (visibleCount === 0) {
+        emptyState.style.display = "block";
+      } else {
+        emptyState.style.display = "none";
+      }
+    }
+  }
+
+  // Filter Buttons
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeCategory = btn.getAttribute("data-blog-filter") || "all";
+
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+
+      applyFilters();
+    });
+  });
+
+  // Search Input
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+      if (searchClear) {
+        searchClear.style.display = searchQuery ? "inline-flex" : "none";
+      }
+      applyFilters();
+    });
+  }
+
+  // Clear Search
+  if (searchClear) {
+    searchClear.addEventListener("click", () => {
+      if (searchInput) {
+        searchInput.value = "";
+        searchQuery = "";
+        searchClear.style.display = "none";
+        searchInput.focus();
+        applyFilters();
+      }
+    });
+  }
+
+  applyFilters();
 }
