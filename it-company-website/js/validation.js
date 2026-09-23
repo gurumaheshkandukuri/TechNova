@@ -103,6 +103,18 @@ function validateField(field) {
       isValid = false;
       errorMessage = "Please enter a valid telephone number.";
     }
+  } else if (field.type === "url" && value) {
+    try {
+      new URL(value);
+    } catch (_) {
+      isValid = false;
+      errorMessage = "Please enter a valid URL (e.g. https://...).";
+    }
+  } else if (field.type === "file" && isRequired) {
+    if (!field.files || field.files.length === 0) {
+      isValid = false;
+      errorMessage = "Please attach a resume file.";
+    }
   }
 
   // Update UI classes
