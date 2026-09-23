@@ -22,9 +22,13 @@ function initServiceFiltering() {
     btn.addEventListener("click", () => {
       const selectedCategory = btn.getAttribute("data-service-filter");
 
-      // Update active state on filter buttons
-      filterButtons.forEach((b) => b.classList.remove("active"));
+      // Update active and ARIA state on filter buttons
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
 
       // Filter cards
       serviceCards.forEach((card) => {
