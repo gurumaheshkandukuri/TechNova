@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed software specification for BusinessFlow CRM, an enterprise customer relationship management platform concept developed by TechNova Solutions.">
+  <title>BusinessFlow CRM — Product Details | TechNova Solutions (Demo)</title>
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BusinessFlow CRM — Product Details | TechNova Solutions (Demo)">
+  <meta property="og:description" content="Detailed software specification for BusinessFlow CRM, an enterprise customer relationship management platform concept developed by TechNova Solutions.">
+  <meta property="og:url" content="./product-details.html">
+  <link rel="canonical" href="./product-details.html">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Corporate Header / Navbar (PDR Section 4 & 35) -->
+  <header class="site-header" id="top">
+    <div class="container header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+        <span class="brand-icon" aria-hidden="true">T</span>
+        <span class="brand-name">
+          <span class="brand-title">TechNova</span>
+          <span class="brand-subtitle">Solutions</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+          <li><a href="industries.html" class="nav-link">Industries</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li><a href="products.html" class="nav-link active" aria-current="page">Products</a></li>
+          <li><a href="technologies.html" class="nav-link">Technologies</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="careers.html" class="nav-link">Careers</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="start-project.html" class="btn btn-primary header-cta-desktop">Start a Project</a>
+        <button type="button" class="mobile-nav-toggle" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open main menu">
+          <span class="hamburger-icon" aria-hidden="true">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation" hidden>
+    <div class="mobile-drawer-overlay"></div>
+    <div class="mobile-drawer-panel">
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="brand-logo" aria-label="TechNova Solutions Home">
+          <span class="brand-icon" aria-hidden="true">T</span>
+          <span class="brand-name">
+            <span class="brand-title">TechNova</span>
+            <span class="brand-subtitle">Solutions</span>
+          </span>
+        </a>
+        <button type="button" class="mobile-drawer-close" aria-label="Close navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav aria-label="Mobile Menu Links">
+        <ul class="mobile-nav-list">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+          <li><a href="industries.html" class="mobile-nav-link">Industries</a></li>
+          <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+          <li><a href="products.html" class="mobile-nav-link active" aria-current="page">Products</a></li>
+          <li><a href="technologies.html" class="mobile-nav-link">Technologies</a></li>
+          <li><a href="about.html" class="mobile-nav-link">About</a></li>
+          <li><a href="careers.html" class="mobile-nav-link">Careers</a></li>
+          <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+          <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="start-project.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: var(--spacing-2);">Start a Project</a>
+        <a href="portfolio.html" class="btn btn-secondary" style="width: 100%; text-align: center;">View Our Work</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Product Hero Section (PDR Section 17) -->
+    <section class="product-detail-hero" aria-labelledby="product-title">
+      <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--spacing-4);">
+          <ol style="display: flex; gap: var(--spacing-2); list-style: none; padding: 0; margin: 0; font-size: var(--font-size-xs); color: var(--color-text-subtle);">
+            <li><a href="index.html" style="color: var(--color-accent); text-decoration: none;">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li><a href="products.html" style="color: var(--color-accent); text-decoration: none;">Products</a></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" style="color: var(--color-text-muted);">BusinessFlow CRM</li>
+          </ol>
+        </nav>
+
+        <div style="display: flex; align-items: center; gap: var(--spacing-3); flex-wrap: wrap;">
+          <span class="portfolio-industry-pill">Customer Relationship Management</span>
+          <span class="demo-concept-badge">Demo Product Architecture</span>
+        </div>
+
+        <h1 id="product-title" style="margin-top: var(--spacing-3); margin-bottom: var(--spacing-3);">
+          BusinessFlow CRM Platform
+        </h1>
+
+        <p class="lead" style="max-width: 800px; margin-bottom: var(--spacing-6);">
+          A centralized CRM system engineered to streamline lead tracking, contact organization, visual sales pipelines, and executive reporting.
+        </p>
+
+        <div style="display: flex; gap: var(--spacing-4); flex-wrap: wrap; margin-bottom: var(--spacing-6);">
+          <a href="start-project.html" class="btn btn-primary">Request a Demonstration</a>
+          <a href="#core-features" class="btn btn-secondary">Explore Architecture &amp; Features</a>
+        </div>
+
+        <!-- Product Meta Grid -->
+        <div class="case-study-meta-grid">
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Product Category</div>
+            <div class="case-meta-item-value">CRM &amp; Sales Operations</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Deployment Model</div>
+            <div class="case-meta-item-value">Modular Web Platform</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Architecture</div>
+            <div class="case-meta-item-value">RESTful API + React UI</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item-label">Database Model</div>
+            <div class="case-meta-item-value">Relational SQL Schema</div>
+          </div>
+        </div>
+
+        <!-- Demo Notice Banner -->
+        <div class="demo-disclaimer" style="margin-top: var(--spacing-4); width: 100%;">
+          <strong>Demo Notice:</strong> BusinessFlow CRM is a demonstration software concept developed by TechNova Solutions. It is presented to illustrate software engineering capabilities and is not a commercial subscription service.
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Features Breakdown (PDR Section 16 & 17 - Exact 5 Required Modules) -->
+    <section class="section" id="core-features" aria-labelledby="features-heading">
+      <div class="container">
+        <span class="section-badge">Core Capabilities</span>
+        <h2 id="features-heading" style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">
+          Key Functional Modules
+        </h2>
+        <p class="lead" style="max-width: 760px; margin-bottom: var(--spacing-8);">
+          BusinessFlow CRM is structured into five core operational modules designed to support sales representatives and management.
+        </p>
+
+        <div class="grid grid-2" style="gap: var(--spacing-8);">
+
+          <!-- 1. Leads Module -->
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-4);">
+              <div class="product-logo-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-xl); color: var(--color-primary); margin: 0;">1. Leads Management</h3>
+            </div>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: var(--line-height-normal); margin-bottom: var(--spacing-4);">
+              Capture, qualify, and organize incoming prospect enquiries across web forms, email, and manual entries into a single intake repository.
+            </p>
+            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-xs); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-1);">
+              <li>Structured lead qualification statuses: New, Contacted, Qualified, and Unqualified.</li>
+              <li>Lead source attribution tracking (Website, Referral, Campaign, Direct).</li>
+              <li>Automated lead routing and assignment to designated sales team members.</li>
+              <li>One-click conversion from qualified lead into active Account, Contact, and Opportunity records.</li>
+            </ul>
+          </div>
+
+          <!-- 2. Contacts Module -->
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-4);">
+              <div class="product-logo-icon" aria-hidden="true" style="background-color: rgba(13, 148, 136, 0.15); color: var(--color-secondary);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-xl); color: var(--color-primary); margin: 0;">2. Contacts &amp; Accounts</h3>
+            </div>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: var(--line-height-normal); margin-bottom: var(--spacing-4);">
+              Maintain a consolidated 360-degree historical profile for every client contact, organizational stakeholder, and company account.
+            </p>
+            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-xs); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-1);">
+              <li>Unified contact history including call logs, meeting notes, and email records.</li>
+              <li>Hierarchical account mapping linking multiple contacts to parent companies.</li>
+              <li>Customizable metadata fields tailored to enterprise domain requirements.</li>
+              <li>Structured contact search with multi-field filtering and tag grouping.</li>
+            </ul>
+          </div>
+
+          <!-- 3. Sales Pipeline Module -->
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-4);">
+              <div class="product-logo-icon" aria-hidden="true" style="background-color: rgba(99, 102, 241, 0.15); color: #6366f1;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-xl); color: var(--color-primary); margin: 0;">3. Sales Pipeline</h3>
+            </div>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: var(--line-height-normal); margin-bottom: var(--spacing-4);">
+              Track open deals through transparent stages to optimize follow-ups and forecast business development cycles.
+            </p>
+            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-xs); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-1);">
+              <li>Interactive Kanban board view with stages: Discovery, Scoping, Proposal, Negotiation, Closed-Won.</li>
+              <li>Deal value aggregation and expected timeline forecasting per pipeline stage.</li>
+              <li>Stage progression validation rules ensuring prerequisites are documented.</li>
+              <li>Win/loss categorization providing clarity on sales performance patterns.</li>
+            </ul>
+          </div>
+
+          <!-- 4. Reports Module -->
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-8);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-4);">
+              <div class="product-logo-icon" aria-hidden="true" style="background-color: rgba(245, 158, 11, 0.15); color: #d97706;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-xl); color: var(--color-primary); margin: 0;">4. Executive Reports &amp; Analytics</h3>
+            </div>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: var(--line-height-normal); margin-bottom: var(--spacing-4);">
+              Data visualization dashboards that summarize pipeline metrics, team activities, and deal throughput.
+            </p>
+            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-xs); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-1);">
+              <li>Configurable visual reports for monthly deal volume, stage duration, and channel source.</li>
+              <li>Individual representative activity logs (calls completed, proposals sent, follow-ups scheduled).</li>
+              <li>Filterable timeframes (Weekly, Monthly, Quarterly, Year-to-Date).</li>
+              <li>Structured data export into CSV and spreadsheet formats for offline review.</li>
+            </ul>
+          </div>
+
+          <!-- 5. Notifications Module -->
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-8); grid-column: span 2;">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3); margin-bottom: var(--spacing-4);">
+              <div class="product-logo-icon" aria-hidden="true" style="background-color: rgba(239, 68, 68, 0.15); color: #dc2626;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-xl); color: var(--color-primary); margin: 0;">5. Task &amp; Notification Engine</h3>
+            </div>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); line-height: var(--line-height-normal); margin-bottom: var(--spacing-4);">
+              Automated alert dispatcher keeping team members notified about critical follow-ups, stale opportunities, and assignment updates.
+            </p>
+            <div class="grid grid-3" style="gap: var(--spacing-4);">
+              <div style="background-color: var(--color-bg-alt); padding: var(--spacing-4); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <strong style="font-size: var(--font-size-sm); color: var(--color-primary); display: block; margin-bottom: var(--spacing-1);">Task Reminders</strong>
+                <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Scheduled calendar alerts for client touchpoints and proposal due dates.</span>
+              </div>
+              <div style="background-color: var(--color-bg-alt); padding: var(--spacing-4); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <strong style="font-size: var(--font-size-sm); color: var(--color-primary); display: block; margin-bottom: var(--spacing-1);">Pipeline Triggers</strong>
+                <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">In-app alerts when deals remain in a single stage beyond defined parameters.</span>
+              </div>
+              <div style="background-color: var(--color-bg-alt); padding: var(--spacing-4); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                <strong style="font-size: var(--font-size-sm); color: var(--color-primary); display: block; margin-bottom: var(--spacing-1);">Assignment Alerts</strong>
+                <span style="font-size: var(--font-size-xs); color: var(--color-text-muted);">Direct notifications to representatives when a new prospect is routed to their queue.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interface Screenshots Section (PDR Section 17) -->
+    <section class="section" style="background-color: var(--color-bg-alt);" aria-labelledby="interface-heading">
+      <div class="container">
+        <span class="section-badge">Interface Mockups</span>
+        <h2 id="interface-heading" style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">
+          Application Interface Previews
+        </h2>
+        <p class="lead" style="max-width: 760px; margin-bottom: var(--spacing-8);">
+          Visual representations of BusinessFlow CRM's primary application views engineered for clarity, accessibility, and fast information scanning.
+        </p>
+
+        <!-- Preview 1: Pipeline Board -->
+        <div style="margin-bottom: var(--spacing-8);">
+          <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 1: Visual Sales Pipeline (Kanban Board)</h3>
+          <div class="case-study-mockup-frame">
+            <div class="mockup-frame-bar">
+              <span class="mockup-dot mockup-dot-red"></span>
+              <span class="mockup-dot mockup-dot-yellow"></span>
+              <span class="mockup-dot mockup-dot-green"></span>
+              <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">businessflow.demo/app/pipeline</span>
+            </div>
+            <div class="mockup-frame-content">
+              <svg width="100%" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- App Header -->
+                <rect x="0" y="0" width="800" height="30" fill="#1E293B"/>
+                <rect x="20" y="8" width="120" height="14" rx="2" fill="#2563EB"/>
+                <rect x="680" y="8" width="100" height="14" rx="2" fill="#334155"/>
+                <!-- Column 1: Discovery -->
+                <rect x="20" y="45" width="175" height="160" rx="6" fill="#0F172A" stroke="#334155"/>
+                <rect x="35" y="55" width="70" height="8" rx="2" fill="#38BDF8"/>
+                <rect x="30" y="72" width="155" height="40" rx="4" fill="#1E293B" stroke="#475569"/>
+                <rect x="38" y="80" width="100" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="38" y="94" width="60" height="8" rx="2" fill="#2563EB"/>
+                <rect x="30" y="120" width="155" height="40" rx="4" fill="#1E293B" stroke="#475569"/>
+                <rect x="38" y="128" width="80" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="38" y="142" width="50" height="8" rx="2" fill="#2563EB"/>
+
+                <!-- Column 2: Scoping -->
+                <rect x="215" y="45" width="175" height="160" rx="6" fill="#0F172A" stroke="#334155"/>
+                <rect x="230" y="55" width="70" height="8" rx="2" fill="#818CF8"/>
+                <rect x="225" y="72" width="155" height="40" rx="4" fill="#1E293B" stroke="#475569"/>
+                <rect x="233" y="80" width="90" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="233" y="94" width="70" height="8" rx="2" fill="#6366F1"/>
+
+                <!-- Column 3: Proposal -->
+                <rect x="410" y="45" width="175" height="160" rx="6" fill="#0F172A" stroke="#334155"/>
+                <rect x="425" y="55" width="70" height="8" rx="2" fill="#F59E0B"/>
+                <rect x="420" y="72" width="155" height="40" rx="4" fill="#1E293B" stroke="#475569"/>
+                <rect x="428" y="80" width="100" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="428" y="94" width="60" height="8" rx="2" fill="#D97706"/>
+                <rect x="420" y="120" width="155" height="40" rx="4" fill="#1E293B" stroke="#475569"/>
+                <rect x="428" y="128" width="90" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="428" y="142" width="50" height="8" rx="2" fill="#D97706"/>
+
+                <!-- Column 4: Closed Won -->
+                <rect x="605" y="45" width="175" height="160" rx="6" fill="#0F172A" stroke="#334155"/>
+                <rect x="620" y="55" width="70" height="8" rx="2" fill="#34D399"/>
+                <rect x="615" y="72" width="155" height="40" rx="4" fill="#1E293B" stroke="#475569"/>
+                <rect x="623" y="80" width="100" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="623" y="94" width="70" height="8" rx="2" fill="#10B981"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview 2: Contact Management Ledger -->
+        <div>
+          <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 2: Contact &amp; Account Organization Ledger</h3>
+          <div class="case-study-mockup-frame">
+            <div class="mockup-frame-bar">
+              <span class="mockup-dot mockup-dot-red"></span>
+              <span class="mockup-dot mockup-dot-yellow"></span>
+              <span class="mockup-dot mockup-dot-green"></span>
+              <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">businessflow.demo/app/contacts</span>
+            </div>
+            <div class="mockup-frame-content">
+              <svg width="100%" height="180" viewBox="0 0 800 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Search & Filters -->
+                <rect x="20" y="15" width="280" height="24" rx="4" fill="#1E293B" stroke="#334155"/>
+                <rect x="35" y="22" width="100" height="10" rx="2" fill="#475569"/>
+                <rect x="650" y="15" width="130" height="24" rx="4" fill="#2563EB"/>
+                <!-- Table Header -->
+                <rect x="20" y="50" width="760" height="24" rx="3" fill="#1E293B"/>
+                <rect x="35" y="58" width="60" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="180" y="58" width="80" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="340" y="58" width="80" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="500" y="58" width="60" height="8" rx="2" fill="#94A3B8"/>
+                <rect x="680" y="58" width="50" height="8" rx="2" fill="#94A3B8"/>
+                <!-- Table Rows -->
+                <rect x="20" y="80" width="760" height="24" rx="2" fill="#0F172A"/>
+                <rect x="35" y="88" width="100" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="180" y="88" width="110" height="8" rx="2" fill="#64748B"/>
+                <rect x="340" y="88" width="90" height="8" rx="2" fill="#64748B"/>
+                <rect x="500" y="86" width="65" height="12" rx="2" fill="#10B981"/>
+                
+                <rect x="20" y="110" width="760" height="24" rx="2" fill="#1E293B"/>
+                <rect x="35" y="118" width="100" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="180" y="118" width="110" height="8" rx="2" fill="#64748B"/>
+                <rect x="340" y="118" width="90" height="8" rx="2" fill="#64748B"/>
+                <rect x="500" y="116" width="65" height="12" rx="2" fill="#3B82F6"/>
+
+                <rect x="20" y="140" width="760" height="24" rx="2" fill="#0F172A"/>
+                <rect x="35" y="148" width="100" height="8" rx="2" fill="#CBD5E1"/>
+                <rect x="180" y="148" width="110" height="8" rx="2" fill="#64748B"/>
+                <rect x="340" y="148" width="90" height="8" rx="2" fill="#64748B"/>
+                <rect x="500" y="146" width="65" height="12" rx="2" fill="#F59E0B"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Technical Architecture & Specifications (PDR Section 17) -->
+    <section class="section" aria-labelledby="architecture-heading">
+      <div class="container">
+        <span class="section-badge">Technical Stack</span>
+        <h2 id="architecture-heading" style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">
+          Software Architecture &amp; Specifications
+        </h2>
+        <p class="lead" style="max-width: 760px; margin-bottom: var(--spacing-8);">
+          Built with an API-first approach, BusinessFlow CRM offers a modular structure capable of adapting to corporate data requirements.
+        </p>
+
+        <div class="grid grid-3" style="gap: var(--spacing-6);">
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-6);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Frontend Architecture</h3>
+            <ul style="padding-left: var(--spacing-4); font-size: var(--font-size-xs); color: var(--color-text-muted); line-height: var(--line-height-relaxed);">
+              <li>Single-page application interface powered by React.</li>
+              <li>Responsive component library built for desktop and tablet screens.</li>
+              <li>Client-side form validation and state caching for fast entry.</li>
+              <li>Accessible high-contrast UI tokens with keyboard navigation.</li>
+            </ul>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-6);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Backend Services</h3>
+            <ul style="padding-left: var(--spacing-4); font-size: var(--font-size-xs); color: var(--color-text-muted); line-height: var(--line-height-relaxed);">
+              <li>RESTful API service layer handling data routing and transformations.</li>
+              <li>Role-based access control (RBAC) authorization middleware.</li>
+              <li>Structured logging for administrative action audits.</li>
+              <li>Modular event triggers for notification dispatching.</li>
+            </ul>
+          </div>
+
+          <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-6);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Data Storage</h3>
+            <ul style="padding-left: var(--spacing-4); font-size: var(--font-size-xs); color: var(--color-text-muted); line-height: var(--line-height-relaxed);">
+              <li>Relational persistence using PostgreSQL / MySQL engines.</li>
+              <li>Indexed foreign key schemas for rapid pipeline aggregations.</li>
+              <li>Automated database backup routines and data integrity checks.</li>
+              <li>Standardized CSV and JSON data export utilities.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demonstration Discussion CTA Banner (PDR Section 17) -->
+    <section class="section" style="background-color: var(--color-primary); color: #ffffff; text-align: center; padding: var(--spacing-16) 0;">
+      <div class="container">
+        <h2 style="color: #ffffff; margin-bottom: var(--spacing-3);">Interested in Exploring BusinessFlow CRM?</h2>
+        <p class="lead" style="color: var(--color-text-subtle); max-width: 650px; margin: 0 auto var(--spacing-6);">
+          Connect with TechNova's engineering team to discuss how our CRM architecture can be customized and deployed for your organization's sales workflows.
+        </p>
+        <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
+          <a href="start-project.html" class="btn btn-primary">Schedule a Discussion</a>
+          <a href="products.html" class="btn btn-secondary" style="color: #ffffff; border-color: rgba(255,255,255,0.3);">Back to Products</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Corporate Footer (PDR Section 4, 20, 24) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Corporate Profile -->
+        <div class="footer-col">
+          <div class="footer-brand">
+            <span class="brand-icon" aria-hidden="true">T</span>
+            <span class="brand-name">
+              <span class="brand-title">TechNova</span>
+              <span class="brand-subtitle">Solutions</span>
+            </span>
+          </div>
+          <p class="footer-desc">
+            Enterprise software development, full-stack web applications, and cloud architecture solutions engineered for growing businesses.
+          </p>
+          <div class="footer-contacts">
+            <p><strong>Address:</strong> TechNova Park, Outer Ring Road, Bangalore, Karnataka, India (Demo Office)</p>
+            <p><strong>Email:</strong> <a href="mailto:contact@technovasolutions.demo">contact@technovasolutions.demo</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></p>
+            <p><strong>Hours:</strong> Mon – Fri: 9:00 AM – 6:00 PM IST</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Website Development</a></li>
+            <li><a href="services.html">Web Applications</a></li>
+            <li><a href="services.html">Mobile App Development</a></li>
+            <li><a href="services.html">SaaS Development</a></li>
+            <li><a href="services.html">Cloud Solutions</a></li>
+            <li><a href="services.html">IT Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Solutions & Industries -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions &amp; Industries</h4>
+          <ul class="footer-links">
+            <li><a href="solutions.html">CRM Solutions</a></li>
+            <li><a href="solutions.html">ERP Solutions</a></li>
+            <li><a href="industries.html#healthcare">Healthcare</a></li>
+            <li><a href="industries.html#education">Education</a></li>
+            <li><a href="industries.html#retail">Retail</a></li>
+            <li><a href="industries.html#finance">Finance</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter Subscription -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Stay Updated</h4>
+          <p class="footer-desc">Subscribe to our technical briefing on modern web architecture and engineering practices.</p>
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <div class="form-group" style="margin-bottom: var(--spacing-2);">
+              <label for="newsletter-email" class="sr-only">Work Email Address</label>
+              <input type="email" id="newsletter-email" name="email" class="form-input" placeholder="Enter your work email" required>
+              <span class="form-error" id="newsletter-email-error">Please enter a valid email address.</span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+            <div class="newsletter-feedback alert alert-success" id="newsletter-success" style="display: none; margin-top: var(--spacing-2);" role="status">
+              Thank you for subscribing to our technical briefings.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom: Copyright & Mandatory Demo Disclaimer -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 TechNova Solutions. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          <strong>Demo Notice:</strong> TechNova Solutions is a demonstration corporate entity. All metrics, client case studies, portfolio projects, products, and employee profiles are fictional sample materials created for evaluation purposes.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/validation.js"></script>
+</body>
+</html>
