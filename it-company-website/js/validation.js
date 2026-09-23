@@ -1,13 +1,14 @@
 /**
  * TechNova Solutions — Corporate IT Company Website
  * File: js/validation.js
- * Description: Client-side validation utilities and form state management.
- * Specification: TechNova Solutions PDR (Section 20, 21, 25)
+ * Description: Client-side validation utilities, accessibility handlers, and multi-step enquiry workflow.
+ * Specification: TechNova Solutions PDR (Section 19, 20, 21, 24, 25)
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   initFormValidation();
   initNewsletterValidation();
+  initMultiStepForm();
 });
 
 /**
@@ -43,13 +44,13 @@ function initNewsletterValidation() {
 }
 
 /**
- * Universal Form Validation Handler
+ * Universal Form Validation Handler for Standard Forms (Contact & Job Application)
  */
 function initFormValidation() {
-  const forms = document.querySelectorAll("form[data-validate]");
+  const forms = document.querySelectorAll("form[data-validate]:not(#start-project-form)");
 
   forms.forEach((form) => {
-    // Validate on input / blur
+    // Validate on blur and input
     form.querySelectorAll("input, select, textarea").forEach((field) => {
       field.addEventListener("blur", () => validateField(field));
       field.addEventListener("input", () => {
@@ -57,20 +58,31 @@ function initFormValidation() {
           validateField(field);
         }
       });
+      if (field.tagName.toLowerCase() === "select") {
+        field.addEventListener("change", () => validateField(field));
+      }
     });
 
     // Validate on submit
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       let isValid = true;
+      let firstInvalidField = null;
 
       form.querySelectorAll("input, select, textarea").forEach((field) => {
         if (!validateField(field)) {
           isValid = false;
+          if (!firstInvalidField) {
+            firstInvalidField = field;
+          }
         }
       });
 
-      if (isValid) {
+      if (!isValid) {
+        if (firstInvalidField) {
+          firstInvalidField.focus();
+        }
+      } else {
         handleFormSuccess(form);
       }
     });
@@ -83,7 +95,8 @@ function initFormValidation() {
 function validateField(field) {
   const isRequired = field.hasAttribute("required");
   const value = field.value.trim();
-  const errorElement = field.parentElement.querySelector(".form-error");
+  const errorElement = field.closest(".form-group")?.querySelector(".form-error") || 
+                       field.parentElement.querySelector(".form-error");
 
   let isValid = true;
   let errorMessage = "";
@@ -91,6 +104,9 @@ function validateField(field) {
   if (isRequired && !value) {
     isValid = false;
     errorMessage = "This field is required.";
+  } else if (field.tagName.toLowerCase() === "select" && isRequired && !value) {
+    isValid = false;
+    errorMessage = "Please select an option.";
   } else if (field.type === "email" && value) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(value)) {
@@ -117,15 +133,17 @@ function validateField(field) {
     }
   }
 
-  // Update UI classes
+  // Update UI classes and accessibility attributes
   if (!isValid) {
     field.classList.add("is-invalid");
+    field.setAttribute("aria-invalid", "true");
     if (errorElement) {
       errorElement.textContent = errorMessage;
       errorElement.classList.add("visible");
     }
   } else {
     field.classList.remove("is-invalid");
+    field.removeAttribute("aria-invalid");
     if (errorElement) {
       errorElement.textContent = "";
       errorElement.classList.remove("visible");
@@ -149,3 +167,302 @@ function handleFormSuccess(form) {
     form.reset();
   }
 }
+
+/**
+ * 5-Step Project Enquiry Workflow Handler (PDR Section 19 & 21)
+ */
+function initMultiStepForm() {
+  const form = document.getElementById("start-project-form");
+  if (!form) return;
+
+  const totalSteps = 5;
+  let currentStep = 1;
+
+  const stepTitles = [
+    "Step 1: Project Type",
+    "Step 2: Requirements",
+    "Step 3: Budget Range",
+    "Step 4: Project Timeline",
+    "Step 5: Contact Details"
+  ];
+
+  const panels = form.querySelectorAll(".step-panel");
+  const navItems = document.querySelectorAll(".step-progress-item");
+  const mobileSummary = document.getElementById("mobile-step-summary");
+  const btnPrev = document.getElementById("btn-prev-step");
+  const btnNext = document.getElementById("btn-next-step");
+  const btnSubmit = document.getElementById("btn-submit-project");
+  const successBanner = document.getElementById("project-success-message");
+  const stepperNav = document.getElementById("stepper-nav");
+  const btnReset = document.getElementById("btn-reset-enquiry");
+
+  // Step 1 Radio inputs
+  const projectTypeRadios = form.querySelectorAll('input[name="project_type"]');
+  projectTypeRadios.forEach((r) => {
+    r.addEventListener("change", () => clearStepError(1));
+  });
+
+  // Step 3 Radio inputs
+  const budgetRadios = form.querySelectorAll('input[name="budget_range"]');
+  budgetRadios.forEach((r) => {
+    r.addEventListener("change", () => clearStepError(3));
+  });
+
+  // Step 4 Radio inputs
+  const timelineRadios = form.querySelectorAll('input[name="project_timeline"]');
+  timelineRadios.forEach((r) => {
+    r.addEventListener("change", () => clearStepError(4));
+  });
+
+  // Step 2 & 5 text fields: live blur/input validation
+  form.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea').forEach((field) => {
+    field.addEventListener("blur", () => validateField(field));
+    field.addEventListener("input", () => {
+      if (field.classList.contains("is-invalid")) {
+        validateField(field);
+      }
+    });
+  });
+
+  // Clear step-level error banner
+  function clearStepError(step) {
+    const panel = form.querySelector(`.step-panel[data-step="${step}"]`);
+    if (panel) {
+      const banner = panel.querySelector(".step-error-banner");
+      if (banner) {
+        banner.classList.remove("is-visible");
+        banner.textContent = "";
+      }
+    }
+  }
+
+  // Show step-level error banner
+  function showStepError(step, message) {
+    const panel = form.querySelector(`.step-panel[data-step="${step}"]`);
+    if (panel) {
+      const banner = panel.querySelector(".step-error-banner");
+      if (banner) {
+        banner.textContent = message;
+        banner.classList.add("is-visible");
+        banner.focus();
+      }
+    }
+  }
+
+  // Validate specific step
+  function validateCurrentStep(step) {
+    const panel = form.querySelector(`.step-panel[data-step="${step}"]`);
+    if (!panel) return false;
+
+    if (step === 1) {
+      const selected = form.querySelector('input[name="project_type"]:checked');
+      if (!selected) {
+        showStepError(1, "Please select a Project Type to continue.");
+        return false;
+      }
+      clearStepError(1);
+      return true;
+    }
+
+    if (step === 2) {
+      let valid = true;
+      let firstInvalid = null;
+      panel.querySelectorAll("input, textarea").forEach((field) => {
+        if (!validateField(field)) {
+          valid = false;
+          if (!firstInvalid) firstInvalid = field;
+        }
+      });
+      if (!valid && firstInvalid) {
+        firstInvalid.focus();
+      }
+      return valid;
+    }
+
+    if (step === 3) {
+      const selected = form.querySelector('input[name="budget_range"]:checked');
+      if (!selected) {
+        showStepError(3, "Please select an estimated Budget Range to continue.");
+        return false;
+      }
+      clearStepError(3);
+      return true;
+    }
+
+    if (step === 4) {
+      const selected = form.querySelector('input[name="project_timeline"]:checked');
+      if (!selected) {
+        showStepError(4, "Please select an expected Project Timeline to continue.");
+        return false;
+      }
+      clearStepError(4);
+      return true;
+    }
+
+    if (step === 5) {
+      let valid = true;
+      let firstInvalid = null;
+      panel.querySelectorAll("input").forEach((field) => {
+        if (!validateField(field)) {
+          valid = false;
+          if (!firstInvalid) firstInvalid = field;
+        }
+      });
+      if (!valid && firstInvalid) {
+        firstInvalid.focus();
+      }
+      return valid;
+    }
+
+    return true;
+  }
+
+  // Update UI to display the target step
+  function goToStep(step) {
+    if (step < 1 || step > totalSteps) return;
+    currentStep = step;
+
+    // Toggle panels
+    panels.forEach((p) => {
+      const pStep = parseInt(p.getAttribute("data-step"), 10);
+      if (pStep === currentStep) {
+        p.classList.add("is-active");
+      } else {
+        p.classList.remove("is-active");
+      }
+    });
+
+    // Update stepper progress list
+    navItems.forEach((item) => {
+      const itemStep = parseInt(item.getAttribute("data-step"), 10);
+      item.classList.remove("active", "completed");
+      item.removeAttribute("aria-current");
+
+      if (itemStep < currentStep) {
+        item.classList.add("completed");
+      } else if (itemStep === currentStep) {
+        item.classList.add("active");
+        item.setAttribute("aria-current", "step");
+      }
+    });
+
+    // Update mobile summary
+    if (mobileSummary) {
+      mobileSummary.textContent = `${stepTitles[currentStep - 1]} (${currentStep} of ${totalSteps})`;
+    }
+
+    // Update navigation buttons
+    if (btnPrev) {
+      btnPrev.style.visibility = currentStep === 1 ? "hidden" : "visible";
+    }
+
+    if (currentStep === totalSteps) {
+      if (btnNext) btnNext.style.display = "none";
+      if (btnSubmit) btnSubmit.style.display = "inline-flex";
+    } else {
+      if (btnNext) btnNext.style.display = "inline-flex";
+      if (btnSubmit) btnSubmit.style.display = "none";
+    }
+
+    // Scroll slightly to stepper top if on mobile or focus step title
+    const activeHeader = form.querySelector(`.step-panel[data-step="${currentStep}"] .step-panel-title`);
+    if (activeHeader) {
+      activeHeader.setAttribute("tabindex", "-1");
+      activeHeader.focus();
+    }
+  }
+
+  // Next Step button handler
+  if (btnNext) {
+    btnNext.addEventListener("click", () => {
+      if (validateCurrentStep(currentStep)) {
+        goToStep(currentStep + 1);
+      }
+    });
+  }
+
+  // Back button handler
+  if (btnPrev) {
+    btnPrev.addEventListener("click", () => {
+      if (currentStep > 1) {
+        goToStep(currentStep - 1);
+      }
+    });
+  }
+
+  // Prevent accidental submit when pressing Enter in single-line inputs on steps 1-4
+  form.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && e.target.tagName.toLowerCase() !== "textarea") {
+      if (currentStep < totalSteps) {
+        e.preventDefault();
+        if (btnNext) btnNext.click();
+      }
+    }
+  });
+
+  // Final submission on Step 5
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!validateCurrentStep(5)) {
+      return;
+    }
+
+    // Extract captured data for review summary
+    const projectType = form.querySelector('input[name="project_type"]:checked')?.value || "Not Specified";
+    const budgetRange = form.querySelector('input[name="budget_range"]:checked')?.value || "Not Decided";
+    const timeline = form.querySelector('input[name="project_timeline"]:checked')?.value || "Not Decided";
+    const contactName = form.querySelector('input[name="contact_name"]')?.value || "";
+    const contactCompany = form.querySelector('input[name="contact_company"]')?.value || "";
+
+    // Populate summary in confirmation
+    const summaryType = document.getElementById("summary-type");
+    const summaryBudget = document.getElementById("summary-budget");
+    const summaryTimeline = document.getElementById("summary-timeline");
+    const summaryContact = document.getElementById("summary-contact");
+
+    if (summaryType) summaryType.textContent = projectType;
+    if (summaryBudget) summaryBudget.textContent = budgetRange;
+    if (summaryTimeline) summaryTimeline.textContent = timeline;
+    if (summaryContact) {
+      summaryContact.textContent = contactCompany ? `${contactName} (${contactCompany})` : contactName;
+    }
+
+    // Hide form & stepper, show confirmation
+    form.style.display = "none";
+    if (stepperNav) stepperNav.style.display = "none";
+    if (successBanner) {
+      successBanner.style.display = "block";
+      successBanner.focus();
+    }
+  });
+
+  // Reset enquiry button handler
+  if (btnReset) {
+    btnReset.addEventListener("click", () => {
+      form.reset();
+      clearStepError(1);
+      clearStepError(2);
+      clearStepError(3);
+      clearStepError(4);
+      clearStepError(5);
+      form.querySelectorAll(".is-invalid").forEach((el) => {
+        el.classList.remove("is-invalid");
+        el.removeAttribute("aria-invalid");
+      });
+      form.querySelectorAll(".form-error").forEach((el) => {
+        el.classList.remove("visible");
+        el.textContent = "";
+      });
+
+      goToStep(1);
+      form.style.display = "block";
+      if (stepperNav) stepperNav.style.display = "block";
+      if (successBanner) successBanner.style.display = "none";
+    });
+  }
+
+  // Initialize on Step 1
+  goToStep(1);
+}
+

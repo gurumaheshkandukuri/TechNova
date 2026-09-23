@@ -3011,7 +3011,524 @@ body.nav-drawer-open {
 }
 
 
+/* ==========================================================================
+   30. Lead Generation & Interactive Forms Architecture (PDR Section 19 & 21)
+   ========================================================================== */
 
+/* --- Contact Page Architecture --- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+  align-items: start;
+}
 
+@media (min-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1.25fr;
+  }
+}
 
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.contact-info-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-5);
+  margin-top: var(--spacing-4);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.contact-icon-box {
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-item-title {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-subtle);
+  margin-bottom: 0.2rem;
+}
+
+.contact-item-value {
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.contact-item-value a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-item-value a:hover {
+  color: var(--color-accent);
+}
+
+.contact-social-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+}
+
+.contact-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.contact-social-btn:hover {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Map Frame Component */
+.contact-map-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.contact-map-frame {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-map-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-map-footer {
+  padding: var(--spacing-4) var(--spacing-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+  background-color: var(--color-bg-alt);
+}
+
+/* Contact Form Card */
+.contact-form-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+  .form-row-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.65rem 2rem 0.65rem 0.85rem;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-select:focus-visible {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+.form-select.is-invalid {
+  border-color: #ef4444;
+}
+
+/* --- Start a Project Multi-Step Workflow --- */
+.stepper-layout {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stepper Progress Bar */
+.stepper-nav {
+  margin-bottom: var(--spacing-8);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-5) var(--spacing-6);
+}
+
+.step-progress-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.step-progress-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex: 1;
+  z-index: 1;
+}
+
+.step-progress-item::after {
+  content: "";
+  position: absolute;
+  top: 1.25rem;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-border);
+  z-index: -1;
+}
+
+.step-progress-item:last-child::after {
+  display: none;
+}
+
+.step-progress-item.completed::after {
+  background-color: var(--color-accent);
+}
+
+.step-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  color: var(--color-text-subtle);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-2);
+  transition: all var(--transition-fast);
+}
+
+.step-progress-item.active .step-circle {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-light);
+}
+
+.step-progress-item.completed .step-circle {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.step-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-subtle);
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .step-label {
+    display: block;
+  }
+}
+
+.step-progress-item.active .step-label {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.step-progress-item.completed .step-label {
+  color: var(--color-primary);
+}
+
+/* Mobile Step Indicator */
+.mobile-step-summary {
+  display: block;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  margin-top: var(--spacing-3);
+}
+
+@media (min-width: 640px) {
+  .mobile-step-summary {
+    display: none;
+  }
+}
+
+/* Multi-Step Panels Card */
+.step-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-panel {
+  display: none;
+}
+
+.step-panel.is-active {
+  display: block;
+}
+
+.step-panel-header {
+  margin-bottom: var(--spacing-6);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-4);
+}
+
+.step-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-2);
+}
+
+.step-panel-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-1);
+}
+
+.step-panel-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Radio Option Cards (Step 1, 3, 4) */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+@media (min-width: 640px) {
+  .options-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .options-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .options-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.option-tile-label {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.option-tile-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.option-tile-card {
+  background-color: var(--color-bg-alt);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  height: 100%;
+  transition: all var(--transition-fast);
+}
+
+.option-tile-label:hover .option-tile-card {
+  border-color: var(--color-accent);
+  background-color: var(--color-surface);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.option-tile-input:focus-visible + .option-tile-card {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
+.option-tile-input:checked + .option-tile-card {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.option-tile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.option-tile-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.option-check-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  color: transparent;
+  transition: all var(--transition-fast);
+}
+
+.option-tile-input:checked + .option-tile-card .option-check-icon {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.option-tile-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+/* Step Navigation Footer Controls */
+.step-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.step-error-banner {
+  display: none;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-4);
+}
+
+.step-error-banner.is-visible {
+  display: block;
+}
+
+/* Confirmation Summary Box */
+.enquiry-summary-box {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5);
+  margin: var(--spacing-5) 0;
+  text-align: left;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--color-text-subtle);
+  font-weight: var(--font-weight-medium);
+}
+
+.summary-value {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
 
