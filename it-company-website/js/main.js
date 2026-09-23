@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaqAccordion();
   initDynamicCounters();
   initSmoothScroll();
+  initTechFiltering();
 });
 
 /**
@@ -166,6 +167,38 @@ function initSmoothScroll() {
           block: "start",
         });
       }
+    });
+  });
+}
+
+/**
+ * Technology Directory Category Filtering (PDR Section 15)
+ */
+function initTechFiltering() {
+  const filterButtons = document.querySelectorAll("[data-tech-filter]");
+  const techCards = document.querySelectorAll("[data-tech-category]");
+
+  if (filterButtons.length === 0 || techCards.length === 0) return;
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selectedFilter = btn.getAttribute("data-tech-filter");
+
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+
+      techCards.forEach((card) => {
+        const cardCategory = card.getAttribute("data-tech-category");
+        if (selectedFilter === "all" || cardCategory === selectedFilter) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
     });
   });
 }
