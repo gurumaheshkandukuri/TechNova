@@ -7,7 +7,40 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   initFormValidation();
+  initNewsletterValidation();
 });
+
+/**
+ * Newsletter Form Validation & Feedback Handler (PDR Section 24)
+ */
+function initNewsletterValidation() {
+  const newsletterForms = document.querySelectorAll("form[data-newsletter]");
+
+  newsletterForms.forEach((form) => {
+    const input = form.querySelector('input[type="email"]');
+    const statusMsg = form.querySelector(".newsletter-status");
+
+    if (!input || !statusMsg) return;
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const emailVal = input.value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      statusMsg.className = "newsletter-status is-visible";
+
+      if (!emailVal || !emailRegex.test(emailVal)) {
+        statusMsg.classList.add("status-error");
+        statusMsg.textContent = "Please provide a valid business email address.";
+        input.focus();
+      } else {
+        statusMsg.classList.add("status-success");
+        statusMsg.textContent = "Thank you! You have successfully subscribed to TechNova updates.";
+        input.value = "";
+      }
+    });
+  });
+}
 
 /**
  * Universal Form Validation Handler
