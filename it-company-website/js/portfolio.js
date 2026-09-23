@@ -22,8 +22,12 @@ function initPortfolioFiltering() {
     btn.addEventListener("click", () => {
       const selectedFilter = btn.getAttribute("data-portfolio-filter");
 
-      filterButtons.forEach((b) => b.classList.remove("active"));
+      filterButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
       btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
 
       portfolioItems.forEach((item) => {
         const itemCategories = item.getAttribute("data-portfolio-category").split(" ");
