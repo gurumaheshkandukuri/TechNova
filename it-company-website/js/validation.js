@@ -408,39 +408,95 @@ function initMultiStepForm() {
   });
 
   // Final submission on Step 5
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     if (!validateCurrentStep(5)) {
       return;
     }
 
-    // Extract captured data for review summary
-    const projectType = form.querySelector('input[name="project_type"]:checked')?.value || "Not Specified";
-    const budgetRange = form.querySelector('input[name="budget_range"]:checked')?.value || "Not Decided";
-    const timeline = form.querySelector('input[name="project_timeline"]:checked')?.value || "Not Decided";
-    const contactName = form.querySelector('input[name="contact_name"]')?.value || "";
-    const contactCompany = form.querySelector('input[name="contact_company"]')?.value || "";
+    // Collect the 10 PDR fields
+    const projectType = form.querySelector('input[name="project_type"]:checked')?.value || "";
+    const projectDescription = form.querySelector('textarea[name="project_description"]')?.value.trim() || "";
+    const projectFeatures = form.querySelector('textarea[name="project_features"]')?.value.trim() || "";
+    const targetUsers = form.querySelector('input[name="target_users"]')?.value.trim() || "";
+    const budgetRange = form.querySelector('input[name="budget_range"]:checked')?.value || "";
+    const projectTimeline = form.querySelector('input[name="project_timeline"]:checked')?.value || "";
+    const contactName = form.querySelector('input[name="contact_name"]')?.value.trim() || "";
+    const contactEmail = form.querySelector('input[name="contact_email"]')?.value.trim() || "";
+    const contactPhone = form.querySelector('input[name="contact_phone"]')?.value.trim() || "";
+    const contactCompany = form.querySelector('input[name="contact_company"]')?.value.trim() || "";
 
-    // Populate summary in confirmation
-    const summaryType = document.getElementById("summary-type");
-    const summaryBudget = document.getElementById("summary-budget");
-    const summaryTimeline = document.getElementById("summary-timeline");
-    const summaryContact = document.getElementById("summary-contact");
+    const payload = {
+      project_type: projectType,
+      project_description: projectDescription,
+      project_features: projectFeatures,
+      target_users: targetUsers,
+      budget_range: budgetRange,
+      project_timeline: projectTimeline,
+      contact_name: contactName,
+      contact_email: contactEmail,
+      contact_phone: contactPhone,
+      contact_company: contactCompany
+    };
 
-    if (summaryType) summaryType.textContent = projectType;
-    if (summaryBudget) summaryBudget.textContent = budgetRange;
-    if (summaryTimeline) summaryTimeline.textContent = timeline;
-    if (summaryContact) {
-      summaryContact.textContent = contactCompany ? `${contactName} (${contactCompany})` : contactName;
+    // Button loading state
+    if (btnSubmit) {
+      btnSubmit.disabled = true;
+      btnSubmit.textContent = "Submitting...";
     }
+    clearStepError(5);
 
-    // Hide form & stepper, show confirmation
-    form.style.display = "none";
-    if (stepperNav) stepperNav.style.display = "none";
-    if (successBanner) {
-      successBanner.style.display = "block";
-      successBanner.focus();
+    try {
+      const response = await fetch("backend/api/submit_enquiry.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (response.ok && result && result.success) {
+        // Success: populate summary review box
+        const summaryType = document.getElementById("summary-type");
+        const summaryBudget = document.getElementById("summary-budget");
+        const summaryTimeline = document.getElementById("summary-timeline");
+        const summaryContact = document.getElementById("summary-contact");
+
+        if (summaryType) summaryType.textContent = projectType || "Not Specified";
+        if (summaryBudget) summaryBudget.textContent = budgetRange || "Not Decided";
+        if (summaryTimeline) summaryTimeline.textContent = projectTimeline || "Not Decided";
+        if (summaryContact) {
+          summaryContact.textContent = contactCompany ? `${contactName} (${contactCompany})` : contactName;
+        }
+
+        // Hide form & stepper, show confirmation
+        form.style.display = "none";
+        if (stepperNav) stepperNav.style.display = "none";
+        if (successBanner) {
+          successBanner.style.display = "block";
+          successBanner.focus();
+        }
+      } else {
+        // HTTP 400 / 500 error handling without losing user-entered data
+        let errorMessage = "Unable to submit enquiry. Please try again.";
+        if (result && Array.isArray(result.errors) && result.errors.length > 0) {
+          errorMessage = result.errors.join(" ");
+        } else if (result && result.message) {
+          errorMessage = result.message;
+        }
+        showStepError(5, errorMessage);
+      }
+    } catch (err) {
+      // Network or server unreachable error
+      showStepError(5, "Unable to submit enquiry. Please check your network connection and try again.");
+    } finally {
+      if (btnSubmit) {
+        btnSubmit.disabled = false;
+        btnSubmit.textContent = "Submit Project Enquiry";
+      }
     }
   });
 
