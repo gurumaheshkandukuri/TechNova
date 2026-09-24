@@ -63,6 +63,28 @@ function initFormValidation() {
       }
     });
 
+    // Clear contact error banner on field input
+    if (form.id === "contact-form") {
+      form.querySelectorAll("input, select, textarea").forEach((field) => {
+        field.addEventListener("input", () => {
+          const errorBanner = document.getElementById("contact-form-error") || form.querySelector(".step-error-banner");
+          if (errorBanner && errorBanner.classList.contains("is-visible")) {
+            errorBanner.classList.remove("is-visible");
+            errorBanner.textContent = "";
+          }
+        });
+        if (field.tagName.toLowerCase() === "select") {
+          field.addEventListener("change", () => {
+            const errorBanner = document.getElementById("contact-form-error") || form.querySelector(".step-error-banner");
+            if (errorBanner && errorBanner.classList.contains("is-visible")) {
+              errorBanner.classList.remove("is-visible");
+              errorBanner.textContent = "";
+            }
+          });
+        }
+      });
+    }
+
     // Validate on submit
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -82,11 +104,104 @@ function initFormValidation() {
         if (firstInvalidField) {
           firstInvalidField.focus();
         }
+      } else if (form.id === "contact-form") {
+        handleContactFormSubmit(form);
       } else {
         handleFormSuccess(form);
       }
     });
   });
+}
+
+/**
+ * Handle Contact Form Submission to PHP Backend (PDR Section 19)
+ */
+async function handleContactFormSubmit(form) {
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.textContent : "Submit Enquiry";
+  const errorBanner = document.getElementById("contact-form-error") || form.querySelector(".step-error-banner");
+
+  if (errorBanner) {
+    errorBanner.classList.remove("is-visible");
+    errorBanner.textContent = "";
+  }
+
+  // Disable button and show loading state
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+  }
+
+  // Collect the 8 canonical PDR fields
+  const payload = {
+    name: form.querySelector('input[name="name"]')?.value.trim() || "",
+    company: form.querySelector('input[name="company"]')?.value.trim() || "",
+    email: form.querySelector('input[name="email"]')?.value.trim() || "",
+    phone: form.querySelector('input[name="phone"]')?.value.trim() || "",
+    service: form.querySelector('select[name="service"]')?.value || "",
+    budget: form.querySelector('select[name="budget"]')?.value || "",
+    timeline: form.querySelector('select[name="timeline"]')?.value || "",
+    message: form.querySelector('textarea[name="message"]')?.value.trim() || ""
+  };
+
+  try {
+    const response = await fetch("backend/api/submit_enquiry.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json().catch(() => null);
+
+    if (response.ok && result && result.success) {
+      // Success: render existing contact form success confirmation UI
+      handleFormSuccess(form);
+    } else {
+      // HTTP 400 / 500 error: display accessible error banner without losing user data
+      let errorMessage = "Unable to submit enquiry. Please try again.";
+      if (result && Array.isArray(result.errors) && result.errors.length > 0) {
+        errorMessage = result.errors.join(" ");
+      } else if (result && result.message) {
+        errorMessage = result.message;
+      }
+      showContactError(form, errorBanner, errorMessage);
+    }
+  } catch (err) {
+    // Network or server unreachable failure
+    showContactError(form, errorBanner, "Unable to submit enquiry. Please check your network connection and try again.");
+  } finally {
+    // Restore button state
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  }
+}
+
+/**
+ * Display accessible error banner inside Contact Form
+ */
+function showContactError(form, errorBanner, message) {
+  if (errorBanner) {
+    errorBanner.textContent = message;
+    errorBanner.classList.add("is-visible");
+    errorBanner.focus();
+  } else {
+    let banner = form.querySelector(".step-error-banner");
+    if (!banner) {
+      banner = document.createElement("div");
+      banner.id = "contact-form-error";
+      banner.className = "step-error-banner";
+      banner.setAttribute("role", "alert");
+      banner.setAttribute("tabindex", "-1");
+      form.insertBefore(banner, form.firstChild);
+    }
+    banner.textContent = message;
+    banner.classList.add("is-visible");
+    banner.focus();
+  }
 }
 
 /**

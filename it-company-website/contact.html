@@ -274,7 +274,9 @@
               </p>
 
               <!-- Form with exact 8 PDR fields -->
-              <form id="contact-form" data-validate novalidate aria-describedby="contact-form-notice">
+              <form id="contact-form" data-validate novalidate aria-describedby="contact-form-notice contact-form-error">
+                <!-- Accessible Contact Form Error Banner -->
+                <div id="contact-form-error" class="step-error-banner" role="alert" tabindex="-1"></div>
                 
                 <!-- Field 1 & 2: Full Name & Company Name -->
                 <div class="form-row form-row-2">
