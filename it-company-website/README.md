@@ -1,140 +1,185 @@
-# TechNova Solutions — IT Company Website
+# TechNova Solutions — Corporate IT Company Website
 
-> **Demo Project Notice:** TechNova Solutions is a demonstration/fictional IT services and software development company created for a corporate web development project. All company statistics, case study outcomes, team profiles, and client references are strictly demo/sample content.
+> **Demonstration Project Notice:** TechNova Solutions is a demonstration/fictional IT services and software development enterprise created for architectural and educational showcase. All service scenarios, portfolio projects, client case studies, team profiles, and company metrics are sample demonstration records (PDR Section 2 & 22).
 
 ---
 
-## 1. Project Objective
-Develop a modern, professional, and responsive corporate IT company website that communicates TechNova Solutions' services, products, solutions, industry expertise, projects, team, and career opportunities while generating qualified sales enquiries and job applications.
+## 1. Project Name
+**TechNova Solutions — Corporate IT Company Website**
 
-The website follows a real-world enterprise procurement and engagement journey:
+---
+
+## 2. Objective
+The objective of this project is to architect, engineer, and deliver a modern, professional, and accessible corporate IT company website that showcases TechNova Solutions' services, products, enterprise solutions, industry capabilities, demonstration projects, team, and career opportunities, while providing functional client-side enquiry workflows and recruitment interactions.
+
+The website follows an enterprise procurement and client engagement journey:
 `Discover Company → Explore Services → View Solutions → See Work → Build Trust → Submit Enquiry`
 
 ---
 
-## 2. Features
-* **Corporate Navigation:** Full-featured desktop navigation bar, primary CTA ("Start a Project"), and responsive mobile drawer menu.
-* **Services Directory & Filtering:** 12 IT services categorized across 7 domains with instant client-side category filtering.
-* **Solutions Architecture:** 9 business-oriented software solutions structured with Problem, Solution, Features, Benefits, Technologies, and CTAs.
-* **Industries Showcase:** 10 industry verticals detailing domain challenges and tailored technological capabilities.
-* **Portfolio & Case Studies:** Filterable project showcase and in-depth case study template with qualitative/demo outcomes.
-* **Products Showcase:** Proprietary software products directory featuring BusinessFlow CRM.
-* **Technology Stack Matrix:** Comprehensive directory across Frontend, Backend, Database, Mobile, Cloud, and Developer Tools.
-* **Team Directory:** Professional profile directory highlighting engineering, design, and leadership talent.
-* **Careers Portal:** "Why Work With Us" value proposition, filterable job listings, and application submission workflow.
-* **Lead Generation & Project Enquiry:** General contact form and a guided 5-step interactive project enquiry form.
-* **FAQ Accordion:** Accessible interactive accordion addressing common enterprise and client questions.
-* **Technology Blog & Resources:** Category-filtered technical articles, search bar, and newsletter subscription form.
-* **Accessibility & SEO:** WCAG AA contrast compliance, keyboard navigability, semantic HTML, and metadata baseline.
+## 3. Features
+* **Corporate Header & Navigation:** Responsive header featuring desktop menu links, primary "Start a Project" CTA, and a mobile navigation drawer with touch/keyboard accessibility.
+* **Services Directory & Filtering:** 12 IT services across 7 core categories with instant client-side keyword search, category filtering, dynamic counter, and empty-state messaging.
+* **Service Details Template:** Standardized multi-section presentation on `service-details.html` containing Service Overview, What We Build (6 deliverables), 7-stage Engineering Lifecycle, Technical Capabilities, Key Benefits, and Related Projects.
+* **Enterprise Solutions:** 9 structured software solution frameworks on `solutions.html` addressing specific business challenges (CRM, ERP, School Management, Real Estate, Restaurant Management, HR, Inventory, Analytics, Automation).
+* **Industry Verticals:** 10 industry sector showcases on `industries.html` detailing domain-specific challenges and technical solutions.
+* **Portfolio Showcase & Filtering:** Client-side sector-filtered project directory on `portfolio.html` showcasing 6 demonstration applications with live project counters.
+* **In-Depth Case Study:** Structured presentation on `case-study.html` featuring the SmartCampus Integrated Academic Management Portal (Problem, Architecture, Results, Technologies, Process).
+* **Proprietary Software Products:** Product showcase on `products.html` and detailed architectural specification on `product-details.html` featuring BusinessFlow CRM.
+* **Technology Stack Matrix:** Interactive directory on `technologies.html` categorizing 19 technologies across Frontend, Backend, Database, Mobile, Cloud, and Developer Tools.
+* **Leadership & Team Directory:** Professional profile directory on `team.html` presenting 6 engineering and practice leads.
+* **Careers & Recruitment Portal:** Workplace culture showcase on `careers.html` featuring 5 core principles (Learning, Projects, Mentorship, Flexible Environment, Career Growth), job listings with department/type filter, and application form on `job-details.html`.
+* **Technology Blog & Resources:** Engineering insights directory on `blog.html` with 7 PDR categories, live search, results count, empty state, and an 8-element reader view on `blog-details.html`.
+* **Frequently Asked Questions (FAQ):** Accessible accordion on `faq.html` featuring the exact 8 PDR questions with realistic, grounded answers.
+* **Interactive Lead Generation:** General 8-field enquiry form on `contact.html` and a guided 5-step project planner on `start-project.html` with live review summary and reset capabilities.
+* **Global Newsletter Subscription:** Accessible footer subscription form with client-side email format validation on all 19 pages.
+* **Accessibility & Design Tokens:** WCAG AA contrast ratios, fluid layout without horizontal overflow (tested at 375px, 768px, 1024px, 1440px), visible focus rings, skip-to-content links, and semantic landmark attributes (`role="banner"`, `role="contentinfo"`).
 
 ---
 
-## 3. Technologies
-* **Frontend:** HTML5, CSS3 (Modern Custom Properties / Design Tokens), Vanilla JavaScript (ES6+).
-* **Architecture:** Static client-side interactive architecture with modular scripts.
-* **Design System:** Responsive fluid layout with modern 8pt grid spacing and custom CSS reset.
-* **Version Control:** Git & GitHub.
+## 4. Technologies
+* **Markup:** HTML5 (Semantic elements, ARIA landmark roles, accessible skip links)
+* **Styling:** CSS3 (CSS Custom Properties / Design Tokens, Flexbox, CSS Grid, media queries for 640px, 768px, 1024px, 1280px, and `prefers-reduced-motion`)
+* **Client-Side Scripting:** Vanilla JavaScript (ES6+, DOM manipulation, modular architecture without external runtime dependencies)
+* **Architecture:** Static client-side interactive architecture with modular separation:
+  * `js/main.js`: Global navigation, mobile drawer, FAQ accordion, blog filtering/search, smooth scrolling
+  * `js/services.js`: Services directory filtering and search
+  * `js/portfolio.js`: Portfolio sector filtering
+  * `js/careers.js`: Careers job filtering
+  * `js/validation.js`: Universal form validation, newsletter handling, 5-step enquiry stepper
+* **Third-Party Frameworks / Libraries:** None (Zero external dependencies, zero CDNs, zero runtime packages)
+* **Backend / Database:** None in current implementation (strictly frontend-only runtime)
+* **Version Control:** Git & GitHub
 
 ---
 
-## 4. Installation & Setup Instructions
-1. Clone the repository:
+## 5. Installation
+1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
-   cd it-company-website
+   git clone https://github.com/gurumaheshkandukuri/TechNova.git
+   cd TechNova/it-company-website
    ```
-2. Open in your preferred local environment:
-   * Directly open `index.html` in any modern web browser.
-   * Or run a local HTTP server:
+
+2. **Run locally:**
+   * **Direct File Execution:** Open `index.html` directly in any modern web browser.
+   * **Local HTTP Server (Recommended):**
      ```bash
-     # Using Python
+     # Using Python 3
      python -m http.server 8000
 
-     # Using Node.js (npx)
+     # Using Node.js
      npx serve .
      ```
-3. Navigate to `http://localhost:8000` in your web browser.
+
+3. **Access the application:**
+   Navigate to `http://localhost:8000` or the port displayed in your terminal.
 
 ---
 
-## 5. Folder Structure
+## 6. Folder Structure
 ```
 it-company-website/
-│
-├── index.html
-├── about.html
-├── services.html
-├── service-details.html
-├── solutions.html
-├── industries.html
-├── portfolio.html
-├── case-study.html
-├── products.html
-├── product-details.html
-├── technologies.html
-├── team.html
-├── careers.html
-├── job-details.html
-├── blog.html
-├── blog-details.html
-├── faq.html
-├── contact.html
-├── start-project.html
+├── index.html                  # Homepage (Hero, Stats, Featured Services, Solutions Preview, CTA)
+├── about.html                  # About Us (Company Profile, Mission, Vision, Core Values)
+├── services.html               # IT Services Directory (12 services, live category filtering)
+├── service-details.html        # Service Details Template (Overview, Deliverables, Process, Tech)
+├── solutions.html              # Enterprise Solutions (9 business software frameworks)
+├── industries.html             # Industries Served (10 sector verticals)
+├── portfolio.html              # Portfolio Directory (6 demo projects, sector filtering)
+├── case-study.html             # Case Study Presentation (SmartCampus academic portal)
+├── products.html               # Software Products Directory (BusinessFlow CRM showcase)
+├── product-details.html        # Product Details (BusinessFlow CRM specifications & architecture)
+├── technologies.html           # Technologies Matrix (19 technologies, 6 layer filters)
+├── team.html                   # Leadership & Team Directory (6 verified profiles)
+├── careers.html                # Careers Portal (Why Work With Us, job listings filter)
+├── job-details.html            # Job Details & Application Form (Role description, form)
+├── blog.html                   # Engineering Blog (7 categories, live search, results count)
+├── blog-details.html           # Article Reader (8-element structure, related posts)
+├── faq.html                    # Frequently Asked Questions (8 PDR questions, accordion)
+├── contact.html                # Corporate Contact Page (8-field enquiry form, company info)
+├── start-project.html          # Interactive 5-Step Project Planner (Stepper workflow)
 │
 ├── css/
-│   └── style.css
+│   └── style.css               # Consolidated design tokens, layout, components, and responsive styles
 │
 ├── js/
-│   ├── main.js
-│   ├── services.js
-│   ├── portfolio.js
-│   ├── careers.js
-│   ├── estimator.js
-│   └── validation.js
+│   ├── main.js                 # Global navigation, mobile drawer, FAQ accordion, blog search/filter
+│   ├── services.js             # Services directory category filtering and search
+│   ├── portfolio.js            # Portfolio client-side sector filtering
+│   ├── careers.js              # Careers department and employment type filtering
+│   ├── estimator.js            # Project cost estimator placeholder (omitted per architecture decision)
+│   └── validation.js           # Form validation, newsletter validation, 5-step stepper workflow
 │
 ├── images/
-│   ├── hero/
-│   ├── services/
-│   ├── projects/
-│   ├── products/
-│   ├── team/
-│   └── blog/
+│   ├── blog/                   # Directory placeholder for blog imagery
+│   ├── hero/                   # Directory placeholder for hero imagery
+│   ├── products/               # Directory placeholder for product visual assets
+│   ├── projects/               # Directory placeholder for portfolio imagery
+│   ├── services/               # Directory placeholder for service visual assets
+│   └── team/                   # Directory placeholder for team avatars
 │
-└── README.md
+└── README.md                   # Project documentation
 ```
 
 ---
 
-## 6. Screenshots
-*(To be populated during Phase 10 / final verification)*
+## 7. Screenshots
+*(Representative screenshots of key platform interfaces for documentation and evaluation)*
+
+| Page / Interface | Description | Target Path / Placeholder |
+|---|---|---|
+| **Homepage** | Hero section, corporate statistics, and services preview | `assets/screenshots/01_homepage.png` (Placeholder) |
+| **Services Directory** | 12 IT services with live category filtering bar | `assets/screenshots/02_services.png` (Placeholder) |
+| **Enterprise Solutions** | 9 business software solution modules | `assets/screenshots/03_solutions.png` (Placeholder) |
+| **Portfolio Directory** | 6 demonstration project cards with sector filter | `assets/screenshots/04_portfolio.png` (Placeholder) |
+| **Case Study** | SmartCampus architecture, problem, and results | `assets/screenshots/05_case_study.png` (Placeholder) |
+| **BusinessFlow CRM** | Conceptual modules and interface preview | `assets/screenshots/06_products.png` (Placeholder) |
+| **Careers Portal** | Workplace principles, filterable job listings | `assets/screenshots/07_careers.png` (Placeholder) |
+| **Engineering Blog** | 7-category filter, live title search, card grid | `assets/screenshots/08_blog.png` (Placeholder) |
+| **FAQ Page** | Accessible 8-question interactive accordion | `assets/screenshots/09_faq.png` (Placeholder) |
+| **Start Project Stepper** | 5-step guided project planner workflow | `assets/screenshots/10_start_project.png` (Placeholder) |
+
+*Note: Visual interfaces can also be directly inspected in a browser via the local server installation instructions.*
 
 ---
 
-## 7. Database Setup
-*Note: Current phase uses a client-side interactive architecture. A standalone `database.sql` containing the 15 PDR suggested tables will be provided as an evaluation deliverable.*
+## 8. Database Setup
+**Current Architecture: Frontend-Only**
+* The current approved implementation of the TechNova Solutions platform is strictly frontend-only (Vanilla HTML5, CSS3, ES6+ JavaScript).
+* No database server, SQL instance, or backend runtime is configured or required to run the platform.
+* All form interactions (Contact enquiry, Job application, Start Project stepper, Newsletter subscription) operate as client-side interactive workflows with accessible confirmation states.
+* Relational database models and table schemas are deferred to future backend integration stages.
 
 ---
 
-## 8. GitHub URL
-*(To be updated upon repository publish)*
+## 9. GitHub URL
+The project repository is hosted on GitHub at:
+`https://github.com/gurumaheshkandukuri/TechNova.git`
 
 ---
 
-## 9. Live URL
-*(To be updated upon deployment in Phase 10)*
+## 10. Live URL
+**Status: Deployment Not Completed**
+* Production deployment has not yet been executed.
+* The project is currently configured and verified for local execution and static preview.
+* No live public domain or third-party hosting URL is currently active.
 
 ---
 
-## 10. Developer Information
-* **Role:** Lead Software Architect / Full Stack Web Developer
-* **Project:** TechNova Solutions IT Company Website
-* **Specification:** Official Project Definition / Requirement (PDR) Document
+## 11. Developer Info
+* **Repository Owner:** gurumaheshkandukuri
+* **Repository:** [TechNova](https://github.com/gurumaheshkandukuri/TechNova.git)
+* **Project:** TechNova Solutions Corporate IT Website
+* **Role:** Frontend Architecture & UI Engineering
+* **Specification Authority:** TechNova Solutions Product Development Requirements (PDR)
 
 ---
 
-## 11. Future Improvements
-* Full server-side backend integration with PHP / Node.js API endpoints.
-* Relational database persistence using MySQL / PostgreSQL.
-* Dedicated Administrative CMS Dashboard for managing leads, jobs, and blog posts.
-* Interactive Project Cost Estimator and Service Configurator.
-* Dark / Light mode theme customization.
+## 12. Future Improvements
+The following capabilities represent advanced and optional scope items deferred per architecture decisions:
+1. **Server-Side Backend Integration:** Implementation of server-side endpoints (PHP / Node.js) for handling contact enquiries and resume uploads.
+2. **Database Persistence:** Relational database integration (MySQL / PostgreSQL) for storing enquiries, job applicant records, and blog articles.
+3. **Administrative CMS Dashboard:** Authenticated administrator interface for publishing articles, updating job openings, and viewing sales enquiries.
+4. **Interactive Cost Estimator:** Full implementation of the standalone project cost calculator and service configurator.
+5. **Theme Customization:** Accessible Dark / Light mode toggle with user preference persistence.
+6. **Structured Data Markup:** Schema.org JSON-LD structured data for Organization, WebSite, and JobPosting upon production domain launch.
