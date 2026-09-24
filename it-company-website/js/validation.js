@@ -149,25 +149,20 @@ function initFormValidation() {
       }
     });
 
-    // Clear contact error banner on field input
-    if (form.id === "contact-form") {
+    // Clear contact and job application error banner on field input
+    if (form.id === "contact-form" || form.id === "job-application-form") {
+      const bannerId = form.id === "contact-form" ? "contact-form-error" : "job-application-error";
       form.querySelectorAll("input, select, textarea").forEach((field) => {
-        field.addEventListener("input", () => {
-          const errorBanner = document.getElementById("contact-form-error") || form.querySelector(".step-error-banner");
+        const clearBanner = () => {
+          const errorBanner = document.getElementById(bannerId) || form.querySelector(".step-error-banner");
           if (errorBanner && errorBanner.classList.contains("is-visible")) {
             errorBanner.classList.remove("is-visible");
             errorBanner.textContent = "";
+            errorBanner.style.display = "none";
           }
-        });
-        if (field.tagName.toLowerCase() === "select") {
-          field.addEventListener("change", () => {
-            const errorBanner = document.getElementById("contact-form-error") || form.querySelector(".step-error-banner");
-            if (errorBanner && errorBanner.classList.contains("is-visible")) {
-              errorBanner.classList.remove("is-visible");
-              errorBanner.textContent = "";
-            }
-          });
-        }
+        };
+        field.addEventListener("input", clearBanner);
+        field.addEventListener("change", clearBanner);
       });
     }
 
@@ -192,6 +187,8 @@ function initFormValidation() {
         }
       } else if (form.id === "contact-form") {
         handleContactFormSubmit(form);
+      } else if (form.id === "job-application-form") {
+        handleJobApplicationSubmit(form);
       } else {
         handleFormSuccess(form);
       }
@@ -286,6 +283,116 @@ function showContactError(form, errorBanner, message) {
     }
     banner.textContent = message;
     banner.classList.add("is-visible");
+    banner.focus();
+  }
+}
+
+/**
+ * Handle Job Application Form Submission to PHP Backend (PDR Section 18 & 19)
+ */
+async function handleJobApplicationSubmit(form) {
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn ? submitBtn.textContent.trim() : "Submit Demo Application";
+  const errorBanner = document.getElementById("job-application-error") || form.querySelector(".step-error-banner");
+
+  if (errorBanner) {
+    errorBanner.classList.remove("is-visible");
+    errorBanner.textContent = "";
+    errorBanner.style.display = "none";
+  }
+
+  // Disable button and show loading state to prevent accidental double submissions
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+  }
+
+  // Collect the 7 PDR fields + current job title
+  const jobTitle = document.getElementById("job-title")?.textContent.trim() || "Senior Frontend Engineer";
+  const name = form.querySelector("#applicant-name")?.value.trim() || "";
+  const email = form.querySelector("#applicant-email")?.value.trim() || "";
+  const phone = form.querySelector("#applicant-phone")?.value.trim() || "";
+  const resumeInput = form.querySelector("#applicant-resume");
+  const resumeFile = resumeInput && resumeInput.files && resumeInput.files.length > 0 ? resumeInput.files[0] : null;
+  const linkedin = form.querySelector("#applicant-linkedin")?.value.trim() || "";
+  const portfolio = form.querySelector("#applicant-portfolio")?.value.trim() || "";
+  const coverLetter = form.querySelector("#applicant-cover")?.value.trim() || "";
+
+  // Build multipart FormData payload
+  const formData = new FormData();
+  formData.append("job_title", jobTitle);
+  formData.append("name", name);
+  formData.append("email", email);
+  formData.append("phone", phone);
+  if (resumeFile) {
+    formData.append("resume", resumeFile);
+  }
+  if (linkedin) {
+    formData.append("linkedin", linkedin);
+  }
+  if (portfolio) {
+    formData.append("portfolio", portfolio);
+  }
+  if (coverLetter) {
+    formData.append("cover_letter", coverLetter);
+  }
+
+  try {
+    const response = await fetch("backend/api/submit_job_application.php", {
+      method: "POST",
+      body: formData
+    });
+
+    const result = await response.json().catch(() => null);
+
+    if (response.ok && result && result.success) {
+      // Success: render existing success confirmation UI (PDR Section 18)
+      handleFormSuccess(form);
+    } else {
+      // Backend validation error (HTTP 400) or server error (HTTP 500)
+      let errorMessage = "Unable to submit application. Please try again.";
+      if (result && Array.isArray(result.errors) && result.errors.length > 0) {
+        errorMessage = result.errors.join(" ");
+      } else if (result && result.message) {
+        errorMessage = result.message;
+      }
+      showJobApplicationError(form, errorBanner, errorMessage);
+    }
+  } catch (err) {
+    // Network or server unreachable failure
+    showJobApplicationError(form, errorBanner, "Unable to submit application. Please check your network connection and try again.");
+  } finally {
+    // Restore button state
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+    }
+  }
+}
+
+/**
+ * Display accessible error banner inside Job Application Form
+ */
+function showJobApplicationError(form, errorBanner, message) {
+  if (errorBanner) {
+    errorBanner.textContent = message;
+    errorBanner.classList.add("is-visible");
+    errorBanner.style.display = "block";
+    errorBanner.focus();
+  } else {
+    let banner = form.querySelector(".step-error-banner");
+    if (!banner) {
+      banner = document.createElement("div");
+      banner.id = "job-application-error";
+      banner.className = "step-error-banner";
+      banner.setAttribute("role", "alert");
+      banner.setAttribute("tabindex", "-1");
+      banner.style.marginBottom = "var(--spacing-4)";
+      form.insertBefore(banner, form.firstChild);
+    }
+    banner.textContent = message;
+    banner.classList.add("is-visible");
+    banner.style.display = "block";
     banner.focus();
   }
 }

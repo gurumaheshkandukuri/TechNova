@@ -301,7 +301,10 @@
               </p>
 
               <!-- Application Form -->
-              <form id="job-application-form" data-validate novalidate aria-describedby="form-disclaimer">
+              <form id="job-application-form" data-validate novalidate aria-describedby="form-disclaimer job-application-error">
+                <!-- Accessible Job Application Error Banner -->
+                <div id="job-application-error" class="step-error-banner" role="alert" tabindex="-1"></div>
+
                 <!-- Field 1: Name -->
                 <div class="form-group">
                   <label for="applicant-name" class="form-label">Full Name <span aria-hidden="true" style="color: #ef4444;">*</span></label>
