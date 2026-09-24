@@ -157,15 +157,22 @@ function validateField(field) {
  * Handle successful client-side form submission
  */
 function handleFormSuccess(form) {
-  const successBanner = form.parentElement.querySelector(".form-success-message");
-  if (successBanner) {
-    form.style.display = "none";
-    successBanner.style.display = "block";
-    successBanner.focus();
-  } else {
-    alert("Thank you! Your submission has been received.");
-    form.reset();
+  let successBanner = form.parentElement.querySelector(".form-success-message");
+  if (!successBanner) {
+    successBanner = document.createElement("div");
+    successBanner.className = "form-success-message";
+    successBanner.setAttribute("role", "status");
+    successBanner.setAttribute("tabindex", "-1");
+    successBanner.innerHTML = `
+      <div class="success-icon" aria-hidden="true">✓</div>
+      <h3>Submission Received (Demo)</h3>
+      <p>Thank you! Your demonstration enquiry has been captured. No live transmission was executed.</p>
+    `;
+    form.parentElement.insertBefore(successBanner, form);
   }
+  form.style.display = "none";
+  successBanner.style.display = "block";
+  successBanner.focus();
 }
 
 /**

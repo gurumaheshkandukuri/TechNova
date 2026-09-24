@@ -170,7 +170,7 @@
             <!-- ============================================================
                  STEP 1: PROJECT TYPE (Exact 8 PDR Options)
                  ============================================================ -->
-            <fieldset class="step-panel is-active" data-step="1" aria-labelledby="step-1-title">
+            <fieldset class="step-panel is-active" data-step="1" aria-labelledby="step-1-title" aria-describedby="step-1-error">
               <legend class="sr-only">Step 1: Project Type</legend>
               <div class="step-panel-header">
                 <span class="step-badge">Step 1 of 5</span>
@@ -179,7 +179,7 @@
               </div>
 
               <!-- Step 1 Error Banner -->
-              <div class="step-error-banner" role="alert" tabindex="-1"></div>
+              <div id="step-1-error" class="step-error-banner" role="alert" tabindex="-1"></div>
 
               <!-- Exact 8 PDR Options -->
               <div class="options-grid options-grid-4">
@@ -284,13 +284,16 @@
             <!-- ============================================================
                  STEP 2: REQUIREMENTS (Exact PDR Fields: Description, Features, Users)
                  ============================================================ -->
-            <fieldset class="step-panel" data-step="2" aria-labelledby="step-2-title">
+            <fieldset class="step-panel" data-step="2" aria-labelledby="step-2-title" aria-describedby="step-2-error">
               <legend class="sr-only">Step 2: Requirements</legend>
               <div class="step-panel-header">
                 <span class="step-badge">Step 2 of 5</span>
                 <h2 id="step-2-title" class="step-panel-title">Project Scope &amp; Specifications</h2>
                 <p class="step-panel-desc">Outline the core objectives, functional specifications, and target audience for your solution.</p>
               </div>
+
+              <!-- Step 2 Error Banner -->
+              <div id="step-2-error" class="step-error-banner" role="alert" tabindex="-1"></div>
 
               <!-- Field 1: Project Description -->
               <div class="form-group">
@@ -317,7 +320,7 @@
             <!-- ============================================================
                  STEP 3: BUDGET (Exact 5 PDR Options)
                  ============================================================ -->
-            <fieldset class="step-panel" data-step="3" aria-labelledby="step-3-title">
+            <fieldset class="step-panel" data-step="3" aria-labelledby="step-3-title" aria-describedby="step-3-error">
               <legend class="sr-only">Step 3: Budget Range</legend>
               <div class="step-panel-header">
                 <span class="step-badge">Step 3 of 5</span>
@@ -326,7 +329,7 @@
               </div>
 
               <!-- Step 3 Error Banner -->
-              <div class="step-error-banner" role="alert" tabindex="-1"></div>
+              <div id="step-3-error" class="step-error-banner" role="alert" tabindex="-1"></div>
 
               <!-- Exact 5 PDR Options -->
               <div class="options-grid options-grid-3">
@@ -395,7 +398,7 @@
             <!-- ============================================================
                  STEP 4: TIMELINE (Exact 5 PDR Options)
                  ============================================================ -->
-            <fieldset class="step-panel" data-step="4" aria-labelledby="step-4-title">
+            <fieldset class="step-panel" data-step="4" aria-labelledby="step-4-title" aria-describedby="step-4-error">
               <legend class="sr-only">Step 4: Project Timeline</legend>
               <div class="step-panel-header">
                 <span class="step-badge">Step 4 of 5</span>
@@ -404,7 +407,7 @@
               </div>
 
               <!-- Step 4 Error Banner -->
-              <div class="step-error-banner" role="alert" tabindex="-1"></div>
+              <div id="step-4-error" class="step-error-banner" role="alert" tabindex="-1"></div>
 
               <!-- Exact 5 PDR Options -->
               <div class="options-grid options-grid-3">
@@ -473,13 +476,16 @@
             <!-- ============================================================
                  STEP 5: CONTACT (Exact PDR Fields: Name, Email, Phone, Company)
                  ============================================================ -->
-            <fieldset class="step-panel" data-step="5" aria-labelledby="step-5-title">
+            <fieldset class="step-panel" data-step="5" aria-labelledby="step-5-title" aria-describedby="step-5-error">
               <legend class="sr-only">Step 5: Contact Details</legend>
               <div class="step-panel-header">
                 <span class="step-badge">Step 5 of 5</span>
                 <h2 id="step-5-title" class="step-panel-title">Primary Contact Information</h2>
                 <p class="step-panel-desc">Provide your business contact details to associate with this project enquiry.</p>
               </div>
+
+              <!-- Step 5 Error Banner -->
+              <div id="step-5-error" class="step-error-banner" role="alert" tabindex="-1"></div>
 
               <!-- Field 1 & 2: Name & Email -->
               <div class="form-row form-row-2">
