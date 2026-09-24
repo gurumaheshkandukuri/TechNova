@@ -13,31 +13,117 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /**
  * Newsletter Form Validation & Feedback Handler (PDR Section 24)
+ * Handles newsletter subscription persistence across all 19 pages.
  */
 function initNewsletterValidation() {
-  const newsletterForms = document.querySelectorAll("form[data-newsletter]");
+  const newsletterForms = document.querySelectorAll("form[data-newsletter], form#newsletter-form");
 
   newsletterForms.forEach((form) => {
     const input = form.querySelector('input[type="email"]');
+    if (!input) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent.trim() : "Subscribe";
     const statusMsg = form.querySelector(".newsletter-status");
+    const errorSpan = form.querySelector("#newsletter-email-error") || form.querySelector(".form-error, .field-error");
+    const successBanner = form.querySelector("#newsletter-success");
 
-    if (!input || !statusMsg) return;
+    function clearErrors() {
+      if (statusMsg) {
+        statusMsg.className = "newsletter-status";
+        statusMsg.textContent = "";
+      }
+      if (errorSpan) {
+        errorSpan.classList.remove("visible");
+        errorSpan.textContent = "";
+        errorSpan.style.display = "none";
+      }
+      input.classList.remove("is-invalid");
+      input.removeAttribute("aria-invalid");
+    }
 
-    form.addEventListener("submit", (e) => {
+    function showError(message) {
+      if (statusMsg) {
+        statusMsg.className = "newsletter-status is-visible status-error";
+        statusMsg.textContent = message;
+      }
+      if (errorSpan) {
+        errorSpan.textContent = message;
+        errorSpan.classList.add("visible");
+        errorSpan.style.display = "block";
+        errorSpan.style.color = "#ef4444";
+        errorSpan.style.fontSize = "var(--font-size-xs, 0.75rem)";
+        errorSpan.style.marginTop = "0.25rem";
+      }
+      if (successBanner) {
+        successBanner.style.display = "none";
+      }
+      input.classList.add("is-invalid");
+      input.setAttribute("aria-invalid", "true");
+      input.focus();
+    }
+
+    function showSuccess(message) {
+      clearErrors();
+      if (statusMsg) {
+        statusMsg.className = "newsletter-status is-visible status-success";
+        statusMsg.textContent = message;
+      }
+      if (successBanner) {
+        successBanner.textContent = message;
+        successBanner.style.display = "block";
+      }
+      input.value = "";
+    }
+
+    input.addEventListener("input", () => {
+      clearErrors();
+    });
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const emailVal = input.value.trim();
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      statusMsg.className = "newsletter-status is-visible";
-
       if (!emailVal || !emailRegex.test(emailVal)) {
-        statusMsg.classList.add("status-error");
-        statusMsg.textContent = "Please provide a valid business email address.";
-        input.focus();
-      } else {
-        statusMsg.classList.add("status-success");
-        statusMsg.textContent = "Thank you! You have successfully subscribed to TechNova updates.";
-        input.value = "";
+        showError("Please provide a valid business email address.");
+        return;
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting...";
+      }
+
+      try {
+        const response = await fetch("backend/api/subscribe_newsletter.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email: emailVal })
+        });
+
+        const result = await response.json().catch(() => null);
+
+        if (response.ok && result && result.success) {
+          showSuccess(result.message || "Thank you! You have successfully subscribed to TechNova updates.");
+        } else {
+          let errorMessage = "Unable to process subscription. Please try again.";
+          if (result && Array.isArray(result.errors) && result.errors.length > 0) {
+            errorMessage = result.errors.join(" ");
+          } else if (result && result.message) {
+            errorMessage = result.message;
+          }
+          showError(errorMessage);
+        }
+      } catch (err) {
+        showError("Unable to subscribe. Please check your network connection and try again.");
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
       }
     });
   });
