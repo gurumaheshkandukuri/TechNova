@@ -1,0 +1,29 @@
+# TechNova Solutions — Upload Directory Security Rules
+# Prohibits directory indexing and disables script execution
+
+# 1. Disable directory browsing
+Options -Indexes
+
+# 2. Disable PHP execution engine (mod_php / LiteSpeed)
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# 3. Block execution and direct request of executable file types
+<FilesMatch "(?i)\.(php|phtml|php3|php4|php5|php7|php8|phps|pl|py|cgi|sh|bash|exe|bat|cmd)$">
+    Require all denied
+</FilesMatch>
+
+# 4. Optional legacy Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+    <FilesMatch "(?i)\.(php|phtml|php3|php4|php5|php7|php8|phps|pl|py|cgi|sh|bash|exe|bat|cmd)$">
+        Order Deny,Allow
+        Deny from all
+    </FilesMatch>
+</IfModule>
