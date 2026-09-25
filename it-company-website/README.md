@@ -48,7 +48,7 @@ The website follows an enterprise procurement and client engagement journey:
   * `js/careers.js`: Careers job filtering
   * `js/validation.js`: Universal form validation, newsletter handling, 5-step enquiry stepper
 * **Third-Party Frameworks / Libraries:** None (Zero external dependencies, zero CDNs, zero runtime packages)
-* **Backend / Database:** None in current implementation (strictly frontend-only runtime)
+* **Backend & Database:** PHP 8.4+ with `pdo_mysql` extension, MySQL 8.4+ database engine
 * **Version Control:** Git & GitHub
 
 ---
@@ -61,8 +61,11 @@ The website follows an enterprise procurement and client engagement journey:
    ```
 
 2. **Run locally:**
-   * **Direct File Execution:** Open `index.html` directly in any modern web browser.
-   * **Local HTTP Server (Recommended):**
+   * **PHP Built-in Server (Recommended for Backend APIs):**
+     ```bash
+     php -S localhost:8000
+     ```
+   * **Frontend-Only Static HTTP Server:**
      ```bash
      # Using Python 3
      python -m http.server 8000
@@ -70,6 +73,7 @@ The website follows an enterprise procurement and client engagement journey:
      # Using Node.js
      npx serve .
      ```
+   * **Direct File Execution:** Open `index.html` directly in any modern web browser (client-side only).
 
 3. **Access the application:**
    Navigate to `http://localhost:8000` or the port displayed in your terminal.
@@ -98,6 +102,19 @@ it-company-website/
 ├── faq.html                    # Frequently Asked Questions (8 PDR questions, accordion)
 ├── contact.html                # Corporate Contact Page (8-field enquiry form, company info)
 ├── start-project.html          # Interactive 5-Step Project Planner (Stepper workflow)
+│
+├── backend/
+│   ├── api/
+│   │   ├── submit_enquiry.php          # Project & contact enquiry submission endpoint
+│   │   ├── subscribe_newsletter.php    # Newsletter subscription endpoint
+│   │   └── submit_job_application.php  # Job application & resume upload endpoint
+│   ├── config/
+│   │   └── database.php                # PDO database connection layer
+│   └── uploads/
+│       └── resumes/                    # Candidate resume upload storage (.gitkeep)
+│
+├── database/
+│   └── schema.sql                      # Canonical MySQL database schema DDL
 │
 ├── css/
 │   └── style.css               # Consolidated design tokens, layout, components, and responsive styles
@@ -144,11 +161,54 @@ it-company-website/
 ---
 
 ## 8. Database Setup
-**Current Architecture: Frontend-Only**
-* The current approved implementation of the TechNova Solutions platform is strictly frontend-only (Vanilla HTML5, CSS3, ES6+ JavaScript).
-* No database server, SQL instance, or backend runtime is configured or required to run the platform.
-* All form interactions (Contact enquiry, Job application, Start Project stepper, Newsletter subscription) operate as client-side interactive workflows with accessible confirmation states.
-* Relational database models and table schemas are deferred to future backend integration stages.
+
+### Prerequisites
+* **MySQL Database Server:** MySQL 8.4+ (Tested and verified on MySQL 8.4.9)
+* **PHP Runtime:** PHP 8.4+ with `pdo_mysql` extension enabled
+
+### Database Specifications
+* **Database Name:** `technova`
+* **Character Set:** `utf8mb4`
+* **Collation:** `utf8mb4_0900_ai_ci`
+* **Storage Engine:** InnoDB
+
+### Implemented Tables
+The canonical database schema is defined in `database/schema.sql` and includes the 3 active tables:
+1. `enquiries` — Records project planner (`start-project.html`) and corporate contact (`contact.html`) enquiries with canonical status workflow (`New`, `Contacted`, `Qualified`, `Proposal Sent`, `Converted`, `Closed`).
+2. `newsletter_subscribers` — Stores verified, deduplicated email subscriptions captured across all 19 website pages.
+3. `job_applications` — Stores candidate recruitment applications submitted via `job-details.html`, referencing local resume file paths under `backend/uploads/resumes/`.
+
+### Setup Instructions
+
+1. **Create and Select Database:**
+   Log into your local MySQL CLI or client and create the database:
+   ```sql
+   CREATE DATABASE IF NOT EXISTS technova CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+   USE technova;
+   ```
+
+2. **Import Canonical Schema:**
+   Import the schema DDL using the MySQL command line:
+   ```bash
+   mysql -u root -p technova < database/schema.sql
+   ```
+   *(Or execute the DDL queries in `database/schema.sql` directly within your preferred MySQL administration tool).*
+
+3. **Configure Database Connection:**
+   The backend database connection configuration is located at:
+   [`backend/config/database.php`](backend/config/database.php)
+
+   Update `$host`, `$port`, `$dbname`, `$user`, and `$pass` to match your local environment:
+   ```php
+   $host    = 'localhost';
+   $port    = 3306;
+   $dbname  = 'technova';
+   $user    = 'root';
+   $pass    = 'YOUR_LOCAL_PASSWORD'; // Set your local database password
+   ```
+
+   > [!IMPORTANT]
+   > **Security Reminder:** Never commit real database passwords or production credentials to Git. Always ensure local environment credentials remain untracked or managed via secure environment configurations.
 
 ---
 
@@ -170,16 +230,15 @@ The project repository is hosted on GitHub at:
 * **Repository Owner:** gurumaheshkandukuri
 * **Repository:** [TechNova](https://github.com/gurumaheshkandukuri/TechNova.git)
 * **Project:** TechNova Solutions Corporate IT Website
-* **Role:** Frontend Architecture & UI Engineering
+* **Role:** Full-Stack Web Architecture & UI Engineering
 * **Specification Authority:** TechNova Solutions Product Development Requirements (PDR)
 
 ---
 
 ## 12. Future Improvements
 The following capabilities represent advanced and optional scope items deferred per architecture decisions:
-1. **Server-Side Backend Integration:** Implementation of server-side endpoints (PHP / Node.js) for handling contact enquiries and resume uploads.
-2. **Database Persistence:** Relational database integration (MySQL / PostgreSQL) for storing enquiries, job applicant records, and blog articles.
-3. **Administrative CMS Dashboard:** Authenticated administrator interface for publishing articles, updating job openings, and viewing sales enquiries.
-4. **Interactive Cost Estimator:** Full implementation of the standalone project cost calculator and service configurator.
-5. **Theme Customization:** Accessible Dark / Light mode toggle with user preference persistence.
-6. **Structured Data Markup:** Schema.org JSON-LD structured data for Organization, WebSite, and JobPosting upon production domain launch.
+1. **Administrative CMS Dashboard:** Authenticated administrator interface for publishing articles, updating job openings, and viewing sales enquiries (PDR Section 33).
+2. **Lead Management CRM Pipeline:** Interactive lead status progression and sales assignment pipeline (PDR Section 34).
+3. **Interactive Cost Estimator:** Full implementation of the standalone project cost calculator and service configurator.
+4. **Theme Customization:** Accessible Dark / Light mode toggle with user preference persistence.
+5. **Structured Data Markup:** Schema.org JSON-LD structured data for Organization, WebSite, and JobPosting upon production domain launch.
