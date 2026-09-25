@@ -103,6 +103,9 @@ it-company-website/
 ├── contact.html                # Corporate Contact Page (8-field enquiry form, company info)
 ├── start-project.html          # Interactive 5-Step Project Planner (Stepper workflow)
 │
+├── assets/
+│   └── screenshots/            # Platform interface evaluation captures (PDR Section 38/39)
+│
 ├── backend/
 │   ├── api/
 │   │   ├── submit_enquiry.php          # Project & contact enquiry submission endpoint
@@ -143,18 +146,18 @@ it-company-website/
 ## 7. Screenshots
 *(Representative screenshots of key platform interfaces for documentation and evaluation)*
 
-| Page / Interface | Description | Target Path / Placeholder |
+| Page / Interface | Description | Screenshot File Path |
 |---|---|---|
-| **Homepage** | Hero section, corporate statistics, and services preview | `assets/screenshots/01_homepage.png` (Placeholder) |
-| **Services Directory** | 12 IT services with live category filtering bar | `assets/screenshots/02_services.png` (Placeholder) |
-| **Enterprise Solutions** | 9 business software solution modules | `assets/screenshots/03_solutions.png` (Placeholder) |
-| **Portfolio Directory** | 6 demonstration project cards with sector filter | `assets/screenshots/04_portfolio.png` (Placeholder) |
-| **Case Study** | SmartCampus architecture, problem, and results | `assets/screenshots/05_case_study.png` (Placeholder) |
-| **BusinessFlow CRM** | Conceptual modules and interface preview | `assets/screenshots/06_products.png` (Placeholder) |
-| **Careers Portal** | Workplace principles, filterable job listings | `assets/screenshots/07_careers.png` (Placeholder) |
-| **Engineering Blog** | 7-category filter, live title search, card grid | `assets/screenshots/08_blog.png` (Placeholder) |
-| **FAQ Page** | Accessible 8-question interactive accordion | `assets/screenshots/09_faq.png` (Placeholder) |
-| **Start Project Stepper** | 5-step guided project planner workflow | `assets/screenshots/10_start_project.png` (Placeholder) |
+| **Homepage** | Hero section, corporate statistics, and services preview | `assets/screenshots/01_homepage.png` |
+| **Services Directory** | 12 IT services with live category filtering bar | `assets/screenshots/02_services.png` |
+| **Enterprise Solutions** | 9 business software solution modules | `assets/screenshots/03_solutions.png` |
+| **Portfolio Directory** | 6 demonstration project cards with sector filter | `assets/screenshots/04_portfolio.png` |
+| **Case Study** | SmartCampus architecture, problem, and results | `assets/screenshots/05_case_study.png` |
+| **BusinessFlow CRM** | Conceptual modules and interface preview | `assets/screenshots/06_products.png` |
+| **Careers Portal** | Workplace principles, filterable job listings | `assets/screenshots/07_careers.png` |
+| **Engineering Blog** | 7-category filter, live title search, card grid | `assets/screenshots/08_blog.png` |
+| **FAQ Page** | Accessible 8-question interactive accordion | `assets/screenshots/09_faq.png` |
+| **Start Project Stepper** | 5-step guided project planner workflow | `assets/screenshots/10_start_project.png` |
 
 *Note: Visual interfaces can also be directly inspected in a browser via the local server installation instructions.*
 
