@@ -230,10 +230,8 @@ The project repository is hosted on GitHub at:
 ---
 
 ## 10. Live URL
-**Status: Deployment Not Completed**
-* Production deployment has not yet been executed.
-* The project is currently configured and verified for local execution and static preview.
-* No live public domain or third-party hosting URL is currently active.
+The live deployed website is available at:
+`https://technova.freedev.app`
 
 ---
 
