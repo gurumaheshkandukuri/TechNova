@@ -1,0 +1,28 @@
+# TechNova Solutions — Clean URL Configuration
+# Enables extensionless URLs and redirects direct .html requests
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Redirect /index.html to root /
+    RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+    RewriteRule ^index\.html$ / [R=301,L,QSA]
+
+    # 2. Redirect other direct .html requests to clean extensionless URLs
+    RewriteCond %{THE_REQUEST} \s/+[^?]+\.html[\s?] [NC]
+    RewriteRule ^(.+?)\.html$ /$1 [R=301,L,QSA]
+
+    # 3. Remove trailing slash from non-directory URLs to preserve relative asset paths
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.+)/$ /$1 [R=301,L,QSA]
+
+    # 4. Internally rewrite clean URLs to their corresponding .html files
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^/]+)$ $1.html [L,QSA]
+</IfModule>
