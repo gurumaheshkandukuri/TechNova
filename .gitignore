@@ -18,3 +18,5 @@ yarn-debug.log*
 .env
 .env.*
 .env.local
+database.local.php
+*.local.php
