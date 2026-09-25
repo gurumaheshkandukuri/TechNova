@@ -198,17 +198,25 @@ The canonical database schema is defined in `database/schema.sql` and includes t
    The backend database connection configuration is located at:
    [`backend/config/database.php`](backend/config/database.php)
 
-   Update `$host`, `$port`, `$dbname`, `$user`, and `$pass` to match your local environment:
-   ```php
-   $host    = 'localhost';
-   $port    = 3306;
-   $dbname  = 'technova';
-   $user    = 'root';
-   $pass    = 'YOUR_LOCAL_PASSWORD'; // Set your local database password
-   ```
+   The connection layer resolves credentials dynamically via environment variables using native PHP `getenv()`, with graceful fallbacks for local development:
+
+   | Environment Variable | Description | Local Development Fallback |
+   | :--- | :--- | :--- |
+   | `DB_HOST` | Database server hostname or IP | `localhost` |
+   | `DB_PORT` | MySQL database port | `3306` |
+   | `DB_NAME` | MySQL database name | `technova` |
+   | `DB_USER` | MySQL database user | `root` |
+   | `DB_PASS` | MySQL database password | `""` (empty string) |
+   | `DB_CHARSET` | Character set | `utf8mb4` |
+
+   **Local Development:**
+   When running locally without environment variables set, the configuration automatically uses the local fallback values shown above. No additional configuration is required for a standard local development setup.
+
+   **Production Deployment:**
+   In production environments, credentials must never be hardcoded. The production hosting environment must supply the appropriate values via environment variables (`DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASS`, and optionally `DB_CHARSET`).
 
    > [!IMPORTANT]
-   > **Security Reminder:** Never commit real database passwords or production credentials to Git. Always ensure local environment credentials remain untracked or managed via secure environment configurations.
+   > **Security Reminder:** Never commit real database passwords or production credentials to Git. Always ensure production credentials remain untracked and are supplied securely through the hosting environment.
 
 ---
 

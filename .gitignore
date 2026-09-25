@@ -13,3 +13,8 @@ desktop.ini
 *.log
 npm-debug.log*
 yarn-debug.log*
+
+# Environment & Secret Files
+.env
+.env.*
+.env.local

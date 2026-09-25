@@ -6,13 +6,13 @@
  * Connects to the MySQL 'technova' database.
  */
 
-// Database connection configuration
-$host    = 'localhost';
-$port    = 3306;
-$dbname  = 'technova';
-$user    = 'root';
-$pass    = ''; // Local development root account initialized without password
-$charset = 'utf8mb4';
+// Database connection configuration (supports environment variables with local fallbacks)
+$host    = getenv('DB_HOST') !== false ? getenv('DB_HOST') : 'localhost';
+$port    = getenv('DB_PORT') !== false ? (int)getenv('DB_PORT') : 3306;
+$dbname  = getenv('DB_NAME') !== false ? getenv('DB_NAME') : 'technova';
+$user    = getenv('DB_USER') !== false ? getenv('DB_USER') : 'root';
+$pass    = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
+$charset = getenv('DB_CHARSET') !== false ? getenv('DB_CHARSET') : 'utf8mb4';
 
 $dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset={$charset}";
 
