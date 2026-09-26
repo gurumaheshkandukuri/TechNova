@@ -3337,6 +3337,10 @@ body.nav-drawer-open {
 
 .step-panel {
   display: none;
+  border: 0;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .step-panel.is-active {
@@ -3367,6 +3371,11 @@ body.nav-drawer-open {
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   margin-bottom: var(--spacing-1);
+}
+
+.step-panel-title:focus,
+.step-panel-title:focus-visible {
+  outline: none;
 }
 
 .step-panel-desc {
