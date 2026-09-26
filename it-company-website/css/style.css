@@ -803,6 +803,16 @@ p:last-child {
   opacity: 1;
 }
 
+.mobile-drawer[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  .mobile-drawer {
+    display: none !important;
+  }
+}
+
 .mobile-drawer-overlay {
   position: absolute;
   inset: 0;
