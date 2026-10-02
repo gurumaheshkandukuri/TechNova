@@ -118,12 +118,12 @@
             <li class="breadcrumb-separator" aria-hidden="true">/</li>
             <li class="breadcrumb-item"><a href="services.html">Services</a></li>
             <li class="breadcrumb-separator" aria-hidden="true">/</li>
-            <li class="breadcrumb-item"><span class="breadcrumb-current" aria-current="page">Web Application Development</span></li>
+            <li class="breadcrumb-item"><span class="breadcrumb-current" id="service-breadcrumb" aria-current="page">Web Application Development</span></li>
           </ol>
         </nav>
         <span class="section-badge">Service Details Specification</span>
         <h1 id="service-title" style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">Web Application Development</h1>
-        <p class="lead" style="max-width: 800px;">
+        <p class="lead" id="service-hero-lead" style="max-width: 800px;">
           Engineering mission-critical web applications, enterprise client portals, and cloud-native management software built for scalability, reliability, and security.
         </p>
       </div>
@@ -134,10 +134,10 @@
       <div class="container">
         <div style="max-width: 840px;">
           <h2 id="overview-heading" style="margin-bottom: var(--spacing-4);">Overview</h2>
-          <p class="lead" style="margin-bottom: var(--spacing-4);">
+          <p class="lead" id="service-overview-lead" style="margin-bottom: var(--spacing-4);">
             Web application development at TechNova Solutions bridges modern frontend user experience with resilient backend architecture. We build tailored software that automates business processes, connects customer touchpoints, and securely integrates with existing databases.
           </p>
-          <p style="margin-bottom: var(--spacing-6);">
+          <p id="service-overview-desc" style="margin-bottom: var(--spacing-6);">
             Whether you require an internal team administration platform or a customer-facing interactive portal, our solutions are architected using modular component patterns, microservices, and modern database structures designed to handle growing transaction volumes.
           </p>
           <a href="start-project.html" class="btn btn-primary">Discuss Your Project</a>
@@ -151,12 +151,12 @@
         <div class="section-header">
           <span class="section-badge">Solution Deliverables</span>
           <h2 id="build-heading">What We Build</h2>
-          <p class="lead">
+          <p class="lead" id="service-deliverables-lead">
             Concrete web application platforms delivered according to enterprise specifications.
           </p>
         </div>
 
-        <div class="what-we-build-grid">
+        <div class="what-we-build-grid" id="service-deliverables-grid">
           <!-- Item 1: Business Portals -->
           <div class="build-card">
             <h3 class="build-card-title">
@@ -221,11 +221,11 @@
           <span class="section-badge">Methodology</span>
           <h2 id="process-heading">Development Process</h2>
           <p class="lead">
-            Our disciplined 7-stage engineering lifecycle guarantees transparent milestones from specification to production.
+            Our disciplined 7-stage engineering lifecycle provides transparent milestones from specification to production.
           </p>
         </div>
 
-        <div class="process-stepper" role="list">
+        <div class="process-stepper" id="service-process-stepper" role="list">
           <!-- Step 1: Discovery -->
           <div class="process-step-card" role="listitem">
             <div class="process-step-num">1</div>
@@ -288,7 +288,7 @@
           <div class="card">
             <span class="section-badge">Capabilities</span>
             <h3 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">Key Features</h3>
-            <ul style="display: flex; flex-direction: column; gap: var(--spacing-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
+            <ul id="service-capabilities-list" style="display: flex; flex-direction: column; gap: var(--spacing-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
               <li>● Role-Based Access Control (RBAC)</li>
               <li>● RESTful API Integration</li>
               <li>● Real-time Notifications &amp; Alerts</li>
@@ -302,7 +302,7 @@
           <div class="card">
             <span class="section-badge">Stack</span>
             <h3 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">Technologies</h3>
-            <ul style="display: flex; flex-direction: column; gap: var(--spacing-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
+            <ul id="service-technologies-list" style="display: flex; flex-direction: column; gap: var(--spacing-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
               <li>● <strong>Frontend:</strong> React, Vite, Modern CSS3, HTML5</li>
               <li>● <strong>Backend:</strong> Node.js, PHP (Laravel)</li>
               <li>● <strong>Database:</strong> PostgreSQL, MySQL</li>
@@ -315,7 +315,7 @@
           <div class="card">
             <span class="section-badge">Business Value</span>
             <h3 style="margin-top: var(--spacing-2); margin-bottom: var(--spacing-3);">Benefits</h3>
-            <ul style="display: flex; flex-direction: column; gap: var(--spacing-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
+            <ul id="service-benefits-list" style="display: flex; flex-direction: column; gap: var(--spacing-2); font-size: var(--font-size-sm); color: var(--color-text-muted);">
               <li>● Centralizes fragmented business workflows</li>
               <li>● Eliminates manual spreadsheet errors</li>
               <li>● Enables 24/7 web access across remote teams</li>
@@ -338,7 +338,7 @@
           </p>
         </div>
 
-        <div class="grid grid-2" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div class="grid grid-2" id="service-related-projects" style="max-width: 800px; margin-left: auto; margin-right: auto;">
           <article class="portfolio-card">
             <div class="portfolio-img-box">
               <span class="portfolio-industry-badge">Education (Demo Concept)</span>
@@ -371,7 +371,7 @@
       <div class="container cta-banner-content">
         <span class="section-badge" style="background-color: rgba(255, 255, 255, 0.15); color: #ffffff;">Let's Build Together</span>
         <h2 id="cta-heading" class="cta-banner-title">Discuss Your Project</h2>
-        <p class="cta-banner-lead">
+        <p class="cta-banner-lead" id="cta-lead">
           Connect with our software architects to review your web application specifications and obtain an execution timeline.
         </p>
         <div class="flex-center gap-4 flex-wrap">
@@ -497,6 +497,8 @@
 
   <!-- Scripts -->
   <script src="js/main.js"></script>
+  <script src="js/services-data.js?v=2"></script>
+  <script src="js/service-details.js?v=2"></script>
   <script src="js/validation.js"></script>
 </body>
 </html>
