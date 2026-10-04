@@ -117,12 +117,12 @@
             <li aria-hidden="true">/</li>
             <li><a href="portfolio.html" style="color: var(--color-accent); text-decoration: none;">Portfolio</a></li>
             <li aria-hidden="true">/</li>
-            <li aria-current="page" style="color: var(--color-text-muted);">SmartCampus</li>
+            <li aria-current="page" id="breadcrumb-project-name" style="color: var(--color-text-muted);">SmartCampus</li>
           </ol>
         </nav>
 
         <div style="display: flex; align-items: center; gap: var(--spacing-3); flex-wrap: wrap;">
-          <span class="portfolio-industry-pill">Education</span>
+          <span class="portfolio-industry-pill" id="case-study-industry-pill">Education</span>
           <span class="demo-concept-badge">Demo Case Study Concept</span>
         </div>
 
@@ -130,7 +130,7 @@
           SmartCampus: Integrated Academic Management Portal
         </h1>
 
-        <p class="lead" style="max-width: 800px; margin-bottom: var(--spacing-4);">
+        <p class="lead" id="case-study-hero-desc" style="max-width: 800px; margin-bottom: var(--spacing-4);">
           A centralized web application engineered to consolidate student records, course scheduling, faculty administration, and academic evaluations into a unified digital workspace.
         </p>
 
@@ -138,24 +138,24 @@
         <div class="case-study-meta-grid">
           <div class="case-meta-item">
             <div class="case-meta-item-label">Industry</div>
-            <div class="case-meta-item-value">Education</div>
+            <div class="case-meta-item-value" id="case-meta-industry">Education</div>
           </div>
           <div class="case-meta-item">
             <div class="case-meta-item-label">Core Technologies</div>
-            <div class="case-meta-item-value">React, PHP, MySQL</div>
+            <div class="case-meta-item-value" id="case-meta-tech">React, PHP, MySQL</div>
           </div>
           <div class="case-meta-item">
             <div class="case-meta-item-label">Project Type</div>
-            <div class="case-meta-item-value">Web Application Architecture</div>
+            <div class="case-meta-item-value" id="case-meta-type">Web Application Architecture</div>
           </div>
           <div class="case-meta-item">
             <div class="case-meta-item-label">Delivery Scope</div>
-            <div class="case-meta-item-value">Full-Stack Development</div>
+            <div class="case-meta-item-value" id="case-meta-scope">Full-Stack Development</div>
           </div>
         </div>
 
         <!-- Demo Notice Banner -->
-        <div class="demo-disclaimer" style="margin-top: var(--spacing-4); width: 100%;">
+        <div class="demo-disclaimer" id="case-study-demo-notice" style="margin-top: var(--spacing-4); width: 100%;">
           <strong>Demo Notice:</strong> SmartCampus is a fictional/demonstration project model developed to illustrate TechNova's engineering approach for educational institutions. No real client data, live institutional operations, or commercial metrics are represented.
         </div>
       </div>
@@ -165,7 +165,7 @@
     <section class="section case-study-block" aria-labelledby="overview-heading">
       <div class="container">
         <h2 id="overview-heading" style="margin-bottom: var(--spacing-4);">1. Project Overview</h2>
-        <p style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); max-width: 860px;">
+        <p id="case-study-overview" style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); max-width: 860px;">
           SmartCampus was designed to modernize administrative and academic workflows for educational organizations. Educational campuses frequently struggle with fragmented data silos across student enrollments, faculty schedules, and grade reporting. This project concept unifies these disparate operational touchpoints into a single, responsive portal with dedicated role-based views for administrators, faculty members, and students.
         </p>
       </div>
@@ -178,7 +178,7 @@
         <div class="grid grid-2" style="gap: var(--spacing-6);">
           <div style="background-color: var(--color-surface); padding: var(--spacing-6); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
             <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">Operational Bottlenecks</h3>
-            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed);">
+            <ul id="case-study-bottlenecks" style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed);">
               <li>Isolated legacy databases caused redundant manual data entry between admission desks and department heads.</li>
               <li>Faculty members lacked a standardized, real-time portal to input attendance and publish mid-term assessments.</li>
               <li>Students experienced delayed access to lecture timetables and semester evaluation statements.</li>
@@ -186,7 +186,7 @@
           </div>
           <div style="background-color: var(--color-surface); padding: var(--spacing-6); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
             <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-2);">Technical Constraints</h3>
-            <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed);">
+            <ul id="case-study-constraints" style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed);">
               <li>Requirement for responsive multi-device access across desktops, tablets, and smartphones.</li>
               <li>Strict role-based permission boundaries between administrative staff, teaching personnel, and enrolled learners.</li>
               <li>Need for a robust relational data schema capable of linking courses, prerequisites, faculty assignments, and transcripts.</li>
@@ -200,10 +200,10 @@
     <section class="section case-study-block" aria-labelledby="solution-heading">
       <div class="container">
         <h2 id="solution-heading" style="margin-bottom: var(--spacing-4);">3. Proposed Solution</h2>
-        <p style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); max-width: 860px; margin-bottom: var(--spacing-6);">
+        <p id="case-study-solution-summary" style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); max-width: 860px; margin-bottom: var(--spacing-6);">
           TechNova conceptualized a modular three-tier web application architecture. By combining a reactive single-page front-end interface with an API-driven backend and structured relational persistence, the platform delivers smooth navigation, secure role-based permissions, and real-time record coordination.
         </p>
-        <div class="grid grid-3" style="gap: var(--spacing-6);">
+        <div class="grid grid-3" id="case-study-solution-tiers" style="gap: var(--spacing-6);">
           <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
             <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Modular Frontend</h3>
             <p style="font-size: var(--font-size-sm); color: var(--color-text-muted);">
@@ -234,7 +234,7 @@
           The project followed TechNova's standard 7-stage engineering lifecycle to move from initial institutional scoping to release.
         </p>
 
-        <div class="process-stepper">
+        <div class="process-stepper" id="case-study-process-stepper">
           <!-- Step 1: Discovery -->
           <div class="process-step-card">
             <div class="process-step-num">1</div>
@@ -285,7 +285,7 @@
     <section class="section case-study-block" aria-labelledby="features-heading">
       <div class="container">
         <h2 id="features-heading" style="margin-bottom: var(--spacing-4);">5. Application Features</h2>
-        <div class="grid grid-3" style="gap: var(--spacing-6);">
+        <div class="grid grid-3" id="case-study-features-grid" style="gap: var(--spacing-6);">
           
           <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
             <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Student Records Management</h3>
@@ -337,7 +337,7 @@
     <section class="section case-study-block" aria-labelledby="technologies-heading" style="background-color: var(--color-bg-alt);">
       <div class="container">
         <h2 id="technologies-heading" style="margin-bottom: var(--spacing-4);">6. Technologies Used</h2>
-        <div class="grid grid-3" style="gap: var(--spacing-6);">
+        <div class="grid grid-3" id="case-study-tech-grid" style="gap: var(--spacing-6);">
           
           <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); padding: var(--spacing-6); border-radius: var(--radius-lg);">
             <span class="portfolio-industry-pill" style="margin-bottom: var(--spacing-2); display: inline-block;">Frontend</span>
@@ -375,91 +375,93 @@
           Key interface views created during the UI/UX design phase illustrating portal layouts for administrators, faculty, and students.
         </p>
 
-        <!-- Screenshot 1: Admin Dashboard -->
-        <div style="margin-bottom: var(--spacing-8);">
-          <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 1: Administrative Control Console</h3>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-3);">
-            Overview console presenting campus enrollment status, department listings, and system alerts.
-          </p>
-          <div class="case-study-mockup-frame">
-            <div class="mockup-frame-bar">
-              <span class="mockup-dot mockup-dot-red"></span>
-              <span class="mockup-dot mockup-dot-yellow"></span>
-              <span class="mockup-dot mockup-dot-green"></span>
-              <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">smartcampus.demo/admin/overview</span>
-            </div>
-            <div class="mockup-frame-content">
-              <svg width="100%" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Top Nav Bar -->
-                <rect x="0" y="0" width="800" height="30" fill="#1E293B"/>
-                <rect x="20" y="8" width="100" height="14" rx="3" fill="#3B82F6"/>
-                <rect x="680" y="8" width="100" height="14" rx="3" fill="#334155"/>
-                <!-- Sidebar -->
-                <rect x="0" y="30" width="160" height="190" fill="#0F172A"/>
-                <rect x="20" y="50" width="120" height="12" rx="2" fill="#2563EB"/>
-                <rect x="20" y="75" width="100" height="10" rx="2" fill="#334155"/>
-                <rect x="20" y="98" width="110" height="10" rx="2" fill="#334155"/>
-                <rect x="20" y="121" width="90" height="10" rx="2" fill="#334155"/>
-                <rect x="20" y="144" width="105" height="10" rx="2" fill="#334155"/>
-                <!-- Metric Cards -->
-                <rect x="180" y="50" width="180" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
-                <rect x="195" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="195" y="78" width="60" height="18" rx="3" fill="#38BDF8"/>
-                <rect x="380" y="50" width="180" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
-                <rect x="395" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="395" y="78" width="60" height="18" rx="3" fill="#10B981"/>
-                <rect x="580" y="50" width="190" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
-                <rect x="595" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="595" y="78" width="60" height="18" rx="3" fill="#F59E0B"/>
-                <!-- Data Table -->
-                <rect x="180" y="125" width="590" height="80" rx="6" fill="#1E293B" stroke="#334155"/>
-                <rect x="200" y="138" width="550" height="12" rx="2" fill="#334155"/>
-                <rect x="200" y="158" width="550" height="12" rx="2" fill="#0F172A"/>
-                <rect x="200" y="178" width="550" height="12" rx="2" fill="#334155"/>
-              </svg>
+        <div id="case-study-mockups-container">
+          <!-- Screenshot 1: Admin Dashboard -->
+          <div style="margin-bottom: var(--spacing-8);">
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 1: Administrative Control Console</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-3);">
+              Overview console presenting campus enrollment status, department listings, and system alerts.
+            </p>
+            <div class="case-study-mockup-frame">
+              <div class="mockup-frame-bar">
+                <span class="mockup-dot mockup-dot-red"></span>
+                <span class="mockup-dot mockup-dot-yellow"></span>
+                <span class="mockup-dot mockup-dot-green"></span>
+                <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">smartcampus.demo/admin/overview</span>
+              </div>
+              <div class="mockup-frame-content">
+                <svg width="100%" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Top Nav Bar -->
+                  <rect x="0" y="0" width="800" height="30" fill="#1E293B"/>
+                  <rect x="20" y="8" width="100" height="14" rx="3" fill="#3B82F6"/>
+                  <rect x="680" y="8" width="100" height="14" rx="3" fill="#334155"/>
+                  <!-- Sidebar -->
+                  <rect x="0" y="30" width="160" height="190" fill="#0F172A"/>
+                  <rect x="20" y="50" width="120" height="12" rx="2" fill="#2563EB"/>
+                  <rect x="20" y="75" width="100" height="10" rx="2" fill="#334155"/>
+                  <rect x="20" y="98" width="110" height="10" rx="2" fill="#334155"/>
+                  <rect x="20" y="121" width="90" height="10" rx="2" fill="#334155"/>
+                  <rect x="20" y="144" width="105" height="10" rx="2" fill="#334155"/>
+                  <!-- Metric Cards -->
+                  <rect x="180" y="50" width="180" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
+                  <rect x="195" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="195" y="78" width="60" height="18" rx="3" fill="#38BDF8"/>
+                  <rect x="380" y="50" width="180" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
+                  <rect x="395" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="395" y="78" width="60" height="18" rx="3" fill="#10B981"/>
+                  <rect x="580" y="50" width="190" height="60" rx="6" fill="#1E293B" stroke="#334155"/>
+                  <rect x="595" y="62" width="80" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="595" y="78" width="60" height="18" rx="3" fill="#F59E0B"/>
+                  <!-- Data Table -->
+                  <rect x="180" y="125" width="590" height="80" rx="6" fill="#1E293B" stroke="#334155"/>
+                  <rect x="200" y="138" width="550" height="12" rx="2" fill="#334155"/>
+                  <rect x="200" y="158" width="550" height="12" rx="2" fill="#0F172A"/>
+                  <rect x="200" y="178" width="550" height="12" rx="2" fill="#334155"/>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Screenshot 2: Course Timetable Planner -->
-        <div>
-          <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 2: Course &amp; Timetable Scheduling Grid</h3>
-          <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-3);">
-            Interactive schedule viewer illustrating lecture blocks, assigned lecture halls, and faculty timeslots.
-          </p>
-          <div class="case-study-mockup-frame">
-            <div class="mockup-frame-bar">
-              <span class="mockup-dot mockup-dot-red"></span>
-              <span class="mockup-dot mockup-dot-yellow"></span>
-              <span class="mockup-dot mockup-dot-green"></span>
-              <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">smartcampus.demo/portal/timetable</span>
-            </div>
-            <div class="mockup-frame-content">
-              <svg width="100%" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Timetable Header -->
-                <rect x="20" y="20" width="760" height="30" rx="4" fill="#1E293B"/>
-                <rect x="40" y="28" width="120" height="14" rx="2" fill="#38BDF8"/>
-                <!-- Timetable Grid Columns -->
-                <rect x="20" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
-                <rect x="35" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="30" y="90" width="120" height="35" rx="3" fill="#2563EB"/>
-                
-                <rect x="175" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
-                <rect x="190" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="185" y="130" width="120" height="35" rx="3" fill="#7C3AED"/>
-                
-                <rect x="330" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
-                <rect x="345" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="340" y="85" width="120" height="35" rx="3" fill="#0D9488"/>
+          <!-- Screenshot 2: Course Timetable Planner -->
+          <div>
+            <h3 style="font-size: var(--font-size-base); color: var(--color-primary); margin-bottom: var(--spacing-2);">Interface 2: Course &amp; Timetable Scheduling Grid</h3>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-3);">
+              Interactive schedule viewer illustrating lecture blocks, assigned lecture halls, and faculty timeslots.
+            </p>
+            <div class="case-study-mockup-frame">
+              <div class="mockup-frame-bar">
+                <span class="mockup-dot mockup-dot-red"></span>
+                <span class="mockup-dot mockup-dot-yellow"></span>
+                <span class="mockup-dot mockup-dot-green"></span>
+                <span style="font-size: 0.75rem; color: #94a3b8; margin-left: 0.5rem; font-family: monospace;">smartcampus.demo/portal/timetable</span>
+              </div>
+              <div class="mockup-frame-content">
+                <svg width="100%" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Timetable Header -->
+                  <rect x="20" y="20" width="760" height="30" rx="4" fill="#1E293B"/>
+                  <rect x="40" y="28" width="120" height="14" rx="2" fill="#38BDF8"/>
+                  <!-- Timetable Grid Columns -->
+                  <rect x="20" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                  <rect x="35" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="30" y="90" width="120" height="35" rx="3" fill="#2563EB"/>
 
-                <rect x="485" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
-                <rect x="500" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="495" y="105" width="120" height="35" rx="3" fill="#D97706"/>
+                  <rect x="175" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                  <rect x="190" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="185" y="130" width="120" height="35" rx="3" fill="#7C3AED"/>
 
-                <rect x="640" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
-                <rect x="655" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
-                <rect x="650" y="90" width="120" height="35" rx="3" fill="#2563EB"/>
-              </svg>
+                  <rect x="330" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                  <rect x="345" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="340" y="85" width="120" height="35" rx="3" fill="#0D9488"/>
+
+                  <rect x="485" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                  <rect x="500" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="495" y="105" width="120" height="35" rx="3" fill="#D97706"/>
+
+                  <rect x="640" y="60" width="140" height="120" rx="4" fill="#0F172A" stroke="#334155"/>
+                  <rect x="655" y="70" width="70" height="8" rx="2" fill="#94A3B8"/>
+                  <rect x="650" y="90" width="120" height="35" rx="3" fill="#2563EB"/>
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -473,15 +475,15 @@
         <h2 id="outcome-heading" style="margin-bottom: var(--spacing-4);">8. Project Outcome</h2>
         
         <div style="background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-8); max-width: 860px;">
-          <div class="demo-disclaimer" style="margin-top: 0; margin-bottom: var(--spacing-4);">
+          <div class="demo-disclaimer" id="case-study-outcome-notice" style="margin-top: 0; margin-bottom: var(--spacing-4);">
             <strong>Demo Outcome Notice:</strong> The outcomes described below represent the technical capabilities delivered by the SmartCampus software design. In accordance with PDR project guidelines for demonstration companies, no fabricated commercial metrics, percentage improvements, user counts, client testimonials, or revenue figures are reported.
           </div>
           
           <h3 style="font-size: var(--font-size-lg); color: var(--color-primary); margin-bottom: var(--spacing-3);">Delivered Architecture &amp; Operational Capabilities</h3>
-          <p style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); margin-bottom: var(--spacing-4);">
+          <p id="case-study-outcome-lead" style="font-size: var(--font-size-base); color: var(--color-text-main); line-height: var(--line-height-relaxed); margin-bottom: var(--spacing-4);">
             The SmartCampus implementation demonstrated how a decoupled architecture could successfully resolve administrative bottlenecks in higher education institutions:
           </p>
-          <ul style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-2);">
+          <ul id="case-study-outcome-capabilities" style="padding-left: var(--spacing-5); font-size: var(--font-size-sm); color: var(--color-text-main); line-height: var(--line-height-relaxed); display: flex; flex-direction: column; gap: var(--spacing-2);">
             <li><strong>Centralized Academic Administration:</strong> Unified student registration, course prerequisites, and faculty assignments into a cohesive relational database structure.</li>
             <li><strong>Streamlined Evaluation Workflows:</strong> Enabled instructors to record continuous assessments directly through an accessible browser interface, removing spreadsheet transfers.</li>
             <li><strong>Accessible Multi-Device Access:</strong> Provided responsive access for students checking schedules, assignment postings, and institutional notices on mobile devices.</li>
@@ -495,7 +497,7 @@
     <section class="section case-study-block" aria-labelledby="related-heading">
       <div class="container">
         <h2 id="related-heading" style="margin-bottom: var(--spacing-4);">9. Related Demo Projects</h2>
-        <div class="grid grid-2" style="gap: var(--spacing-6);">
+        <div class="grid grid-2" id="case-study-related-grid" style="gap: var(--spacing-6);">
           
           <!-- Related 1: HealthSync Portal -->
           <article class="portfolio-card" data-portfolio-category="healthcare">
@@ -544,8 +546,8 @@
     <!-- 10. CTA (PDR Section 14 - Section 10) -->
     <section class="section" style="background-color: var(--color-primary); color: #ffffff; text-align: center; padding: var(--spacing-16) 0;">
       <div class="container">
-        <h2 style="color: #ffffff; margin-bottom: var(--spacing-3);">Planning a Similar Education or Enterprise Solution?</h2>
-        <p class="lead" style="color: var(--color-text-subtle); max-width: 650px; margin: 0 auto var(--spacing-6);">
+        <h2 id="case-study-cta-heading" style="color: #ffffff; margin-bottom: var(--spacing-3);">Planning a Similar Education or Enterprise Solution?</h2>
+        <p class="lead" id="case-study-cta-lead" style="color: var(--color-text-subtle); max-width: 650px; margin: 0 auto var(--spacing-6);">
           Consult with TechNova's engineering architects to scope your portal architecture, database models, and responsive front-end requirements.
         </p>
         <div style="display: flex; gap: var(--spacing-4); justify-content: center; flex-wrap: wrap;">
@@ -649,6 +651,8 @@
   </footer>
 
   <!-- Scripts -->
+  <script src="js/case-studies-data.js"></script>
+  <script src="js/case-study.js"></script>
   <script src="js/main.js"></script>
   <script src="js/validation.js"></script>
 </body>

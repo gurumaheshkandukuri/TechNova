@@ -84,14 +84,14 @@ const SERVICES_DATA = {
         badge: "Education (Demo Concept)",
         desc: "Comprehensive educational institution web portal and student information platform built with responsive components.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       },
       {
         name: "HealthSync Portal",
         badge: "Healthcare (Demo Concept)",
         desc: "Patient appointment scheduling and clinical service overview web platform engineered for responsive cross-browser usability.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=healthsync"
       }
     ],
     ctaTitle: "Ready to Build Your Website?",
@@ -176,14 +176,14 @@ const SERVICES_DATA = {
         badge: "Education (Demo Concept)",
         desc: "Comprehensive educational institution management portal and student dashboard built with React, PHP, and MySQL.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       },
       {
         name: "HealthSync Portal",
         badge: "Healthcare (Demo Concept)",
         desc: "Clinical consultation booking and records management platform built with React, Node.js, and PostgreSQL.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=healthsync"
       }
     ],
     ctaTitle: "Discuss Your Project",
@@ -268,14 +268,14 @@ const SERVICES_DATA = {
         badge: "Healthcare (Demo Concept)",
         desc: "Clinical consultation booking and records management companion application built for cross-device healthcare workflows.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=healthsync"
       },
       {
         name: "RetailPulse Engine",
         badge: "Retail & E-commerce (Demo Concept)",
         desc: "Retail store inventory and real-time sales telemetry mobile utility for store supervisors and fulfillment staff.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=retailpulse"
       }
     ],
     ctaTitle: "Start Your Mobile App Project",
@@ -367,7 +367,7 @@ const SERVICES_DATA = {
         badge: "Real Estate (Demo Concept)",
         desc: "Cloud-hosted multi-tenant real estate portfolio and lease management SaaS platform with automated payment workflows.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=propertyflow"
       }
     ],
     ctaTitle: "Engineer Your SaaS Product",
@@ -452,14 +452,14 @@ const SERVICES_DATA = {
         badge: "Education (Demo Concept)",
         desc: "Academic portal UI/UX redesign streamlining course registrations, grading views, and faculty dashboard navigation.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       },
       {
         name: "HealthSync Portal",
         badge: "Healthcare (Demo Concept)",
         desc: "Human-centered clinical consultation interface and patient booking flows engineered with accessible high-contrast design.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=healthsync"
       }
     ],
     ctaTitle: "Elevate Your Product UI/UX",
@@ -544,14 +544,14 @@ const SERVICES_DATA = {
         badge: "Logistics (Demo Concept)",
         desc: "Cloud-native supply chain management deployment utilizing Docker containers and automated load-balancing.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=apexlogistics"
       },
       {
         name: "FinSecure Portal",
         badge: "Financial Services (Demo Concept)",
         desc: "Hardened financial portal infrastructure engineered with isolated VPC subnets and rigorous automated backups.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=finsecure"
       }
     ],
     ctaTitle: "Modernize Your Cloud Infrastructure",
@@ -643,7 +643,7 @@ const SERVICES_DATA = {
         badge: "Financial Services (Demo Concept)",
         desc: "Institutional client onboarding and compliance records management platform built with strict audit trails.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=finsecure"
       }
     ],
     ctaTitle: "Build Your Custom CRM",
@@ -728,14 +728,14 @@ const SERVICES_DATA = {
         badge: "Logistics (Demo Concept)",
         desc: "Integrated supply chain and fleet operations platform coordinating dispatch, cargo tracking, and warehouse handoffs.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=apexlogistics"
       },
       {
         name: "SmartCampus",
         badge: "Education (Demo Concept)",
         desc: "Institutional resource planning platform uniting faculty schedules, student records, admissions, and departmental operations.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       }
     ],
     ctaTitle: "Engineer Your Enterprise ERP",
@@ -820,14 +820,14 @@ const SERVICES_DATA = {
         badge: "Healthcare (Demo Concept)",
         desc: "Secure clinical RESTful API enabling external laboratory information systems and patient portals to synchronize.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=healthsync"
       },
       {
         name: "FinSecure Portal",
         badge: "Financial Services (Demo Concept)",
         desc: "High-security financial API connector bridging merchant payment gateways, transaction webhooks, and audit logs.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=finsecure"
       }
     ],
     ctaTitle: "Connect Your Digital Systems",
@@ -912,14 +912,14 @@ const SERVICES_DATA = {
         badge: "Retail & E-commerce (Demo Concept)",
         desc: "Automated inventory catalog indexing and hourly multi-store sales telemetry synchronization engine.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=retailpulse"
       },
       {
         name: "SmartCampus",
         badge: "Education (Demo Concept)",
         desc: "Automated student tuition fee invoice generation and nightly attendance reconciliation worker pipelines.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       }
     ],
     ctaTitle: "Automate Your Repetitive Workflows",
@@ -1004,14 +1004,14 @@ const SERVICES_DATA = {
         badge: "Retail & E-commerce (Demo Concept)",
         desc: "SEO-optimized e-commerce catalog architecture featuring rich product structured data and sub-second load times.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=retailpulse"
       },
       {
         name: "SmartCampus",
         badge: "Education (Demo Concept)",
         desc: "Institutional portal landing architecture with structured FAQ schema and targeted student enquiry funnels.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       }
     ],
     ctaTitle: "Accelerate Your Digital Reach",
@@ -1096,14 +1096,14 @@ const SERVICES_DATA = {
         badge: "Financial Services (Demo Concept)",
         desc: "Enterprise architectural assessment and security compliance roadmap for institutional financial software.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=finsecure"
       },
       {
         name: "SmartCampus",
         badge: "Education (Demo Concept)",
         desc: "Institutional software modernization strategy transforming fragmented spreadsheets into a unified management portal.",
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
-        link: "case-study.html"
+        link: "case-study.html?project=smartcampus"
       }
     ],
     ctaTitle: "Schedule a Technology Consultation",
