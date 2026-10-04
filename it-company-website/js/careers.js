@@ -47,7 +47,7 @@ function initCareersFiltering() {
     }
 
     if (resultsCount) {
-      resultsCount.textContent = `Showing ${visibleCount} sample opportunit${visibleCount === 1 ? "y" : "ies"}`;
+      resultsCount.textContent = `Showing ${visibleCount} position${visibleCount === 1 ? "" : "s"}`;
     }
   }
 

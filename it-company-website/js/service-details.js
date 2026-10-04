@@ -136,7 +136,7 @@ function renderServiceDetails() {
           ${p.icon}
         </div>
         <div class="portfolio-card-body">
-          <h3 class="portfolio-title">${escapeHtml(p.name)} <span style="font-size: var(--font-size-xs); font-weight: var(--font-weight-normal); color: var(--color-text-subtle);">(Demo Project)</span></h3>
+          <h3 class="portfolio-title">${escapeHtml(p.name)}</h3>
           <p class="portfolio-desc">${escapeHtml(p.desc)}</p>
           <a href="${escapeHtml(p.link)}" class="btn btn-secondary" style="margin-top: auto;">View Case Study</a>
         </div>

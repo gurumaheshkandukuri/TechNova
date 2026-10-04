@@ -473,7 +473,7 @@ function handleFormSuccess(form) {
     successBanner.setAttribute("tabindex", "-1");
     successBanner.innerHTML = `
       <div class="success-icon" aria-hidden="true">✓</div>
-      <h3>Submission Received (Demo)</h3>
+      <h3>Enquiry Received</h3>
       <p>Thank you! Your demonstration enquiry has been captured for this demonstration. No commercial outreach will occur (PDR Section 2).</p>
     `;
     form.parentElement.insertBefore(successBanner, form);
